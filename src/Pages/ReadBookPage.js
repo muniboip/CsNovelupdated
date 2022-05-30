@@ -1,4 +1,4 @@
-import React, { cloneElement, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/ReadbookPage.css";
 import Header from "../Components/Header";
 import Logo from "../Assets/Images/csnovels-logo.svg";
@@ -11,7 +11,7 @@ import filledBookmark from "../Assets/filledbookmark.jpg";
 import unfilledBookmark from "../Assets/unfilledbookmark.jpg";
 import {
   faTimes,
-  faLock,
+  
   faCog,
   faBars,
   faArrowAltCircleRight,
@@ -26,7 +26,7 @@ import { Modal } from "react-bootstrap";
 import AddComponent from "../Components/Advertisement";
 
 import { toast } from "react-toastify";
-import { StarRate } from "@mui/icons-material";
+
 
 function ReadBookPage({
   authReducer,
@@ -56,7 +56,7 @@ function ReadBookPage({
   const bookId = window.location.pathname.split("/")[2];
   const [chaptersRange, setChaptersRange] = useState([]);
 
-  const [hasMoreData, setHasMoreData] = useState(true);
+  
   const [selectedRange, setSelectedRange] = useState(null);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
 
@@ -143,7 +143,7 @@ function ReadBookPage({
   };
   const scrollToTop = async () => {
     var key = "";
-    if (chaptercontent.length != 0) {
+    if (chaptercontent.length !==0) {
       booksReducer?.chaptersTitles.map((e, ind) => {
         if (e.name === chaptercontent[0][0]?.content) {
           key = ind;
@@ -308,7 +308,8 @@ function ReadBookPage({
         (e) => e.chapter._id === window.location.pathname.split("/")[3]
       )
     );
-  }, [window.location.pathname]);
+    
+  }, [window.location.pathname,selectedChapterId]);
 
   useEffect(() => {
     setdata(
@@ -422,7 +423,7 @@ function ReadBookPage({
             </div>
             <div className=" col-lg-6 right-header">
               {!isLogin && (
-                <a href="#" className="btn-sm">
+                <a href="/#" className="btn-sm">
                   SIGN IN
                 </a>
               )}
@@ -668,7 +669,7 @@ function ReadBookPage({
             </ul>
             {/* <ul className="chapter-count">
               <li className="lock">
-                <a href="#">Prologue </a>
+                <a href="/#">Prologue </a>
                 <FontAwesomeIcon
                   icon={faLock}
                   onClick={() => {
@@ -677,16 +678,16 @@ function ReadBookPage({
                 />
               </li>
               <li>
-                <a href="#">Opening day of The Ancient World</a>
+                <a href="/#">Opening day of The Ancient World</a>
               </li>
               <li>
-                <a href="#">The Divine className </a>
+                <a href="/#">The Divine className </a>
               </li>
               <li>
-                <a href="#">Chaos in both worlds</a>
+                <a href="/#">Chaos in both worlds</a>
               </li>
               <li>
-                <a href="#">Slaying monsters and getting another quest </a>
+                <a href="/#">Slaying monsters and getting another quest </a>
               </li>
             </ul> */}
             <div className="chapters_range">
@@ -698,7 +699,7 @@ function ReadBookPage({
                         className={
                           selectedRange?.index === ele?.index && "blue-line"
                         }
-                        href="#"
+                        href="/#"
                         onClick={(e) => {
                           setSelectedRange(ele);
                           e.preventDefault();

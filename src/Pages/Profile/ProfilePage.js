@@ -32,7 +32,7 @@ function ProfilePage({
   getBookmarks,
 }) {
   const [headerSelection, setHeaderSelection] = useState(
-    window.location.href.split("#")[1]
+    window.location.href.split("/#")[1]
   );
   const [isLoading, setIsLoading] = useState(false);
   const accessToken = authReducer?.accessToken;
@@ -166,7 +166,7 @@ function ProfilePage({
   };
 
   useEffect(() => {
-    setHeaderSelection(parseInt(window.location.href.split("#")[1]));
+    setHeaderSelection(parseInt(window.location.href.split("/#")[1]));
   }, [window.location.href]);
 
   return (

@@ -2704,7 +2704,7 @@
 
             }
 
-            if( direction != 'vertical' ) {
+            if( direction !=='vertical' ) {
 
                 _.slideHandler( slideCount );
                 _.touchObject = {};
@@ -3003,7 +3003,7 @@
                 _[i].slick = new Slick(_[i], opt);
             else
                 ret = _[i].slick[opt].apply(_[i].slick, args);
-            if (typeof ret != 'undefined') return ret;
+            if (typeof ret !=='undefined') return ret;
         }
         return _;
     };

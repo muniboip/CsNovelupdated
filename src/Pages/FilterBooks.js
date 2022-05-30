@@ -106,7 +106,7 @@ function FilterBooks({
                             color: genre === "all" && "white",
                           }}
                           className={`nav-link `}
-                          href="#"
+                          href="/#"
                         >
                           All
                         </a>
@@ -127,7 +127,7 @@ function FilterBooks({
                             color: genre === "urban" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Urban
                         </a>
@@ -148,7 +148,7 @@ function FilterBooks({
                             color: genre === "eastern" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Eastern
                         </a>
@@ -169,7 +169,7 @@ function FilterBooks({
                             color: genre === "games" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Games
                         </a>
@@ -190,7 +190,7 @@ function FilterBooks({
                             color: genre === "fantasy" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Fantasy
                         </a>
@@ -211,7 +211,7 @@ function FilterBooks({
                             color: genre === "sci-fi" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Sci-fi
                         </a>
@@ -232,7 +232,7 @@ function FilterBooks({
                             color: genre === "horror" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Horror
                         </a>
@@ -253,7 +253,7 @@ function FilterBooks({
                             color: genre === "sports" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Sports
                         </a>
@@ -274,7 +274,7 @@ function FilterBooks({
                             color: genre === "action" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Action
                         </a>
@@ -295,7 +295,7 @@ function FilterBooks({
                             color: genre === "war" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           War
                         </a>
@@ -316,7 +316,7 @@ function FilterBooks({
                             color: genre === "realistic" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Realistic
                         </a>
@@ -337,7 +337,7 @@ function FilterBooks({
                             color: genre === "history" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           History
                         </a>
@@ -358,7 +358,7 @@ function FilterBooks({
                             color: genre === "acg" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           ACG
                         </a>
@@ -388,7 +388,7 @@ function FilterBooks({
                             color: contentType === "all" && "white",
                           }}
                           className="nav-link active"
-                          href="#"
+                          href="/#"
                         >
                           All
                         </a>
@@ -407,7 +407,7 @@ function FilterBooks({
                             color: contentType === "translate" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Translate
                         </a>
@@ -425,7 +425,7 @@ function FilterBooks({
                             color: contentType === "original" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Original
                         </a>
@@ -443,7 +443,7 @@ function FilterBooks({
                             color: contentType === "mtl" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           MTl (Machine Translate)
                         </a>
@@ -468,7 +468,7 @@ function FilterBooks({
                             color: contentStatus === "all" && "white",
                           }}
                           className="nav-link active"
-                          href="#"
+                          href="/#"
                         >
                           All
                         </a>
@@ -487,7 +487,7 @@ function FilterBooks({
                             color: contentStatus === "completed" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Completed
                         </a>
@@ -506,7 +506,7 @@ function FilterBooks({
                             color: contentStatus === "ongoing" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Ongoing
                         </a>
@@ -534,7 +534,7 @@ function FilterBooks({
                             color: sortBy === "popular" && "white",
                           }}
                           className="nav-link active"
-                          href="#"
+                          href="/#"
                         >
                           Popular
                         </a>
@@ -553,7 +553,7 @@ function FilterBooks({
                             color: sortBy === "recommended" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Recommended
                         </a>
@@ -572,7 +572,7 @@ function FilterBooks({
                             color: sortBy === "rating" && "white",
                           }}
                           className="nav-link"
-                          href="#"
+                          href="/#"
                         >
                           Rating
                         </a>

@@ -71,6 +71,7 @@ function SignInSignUpModal({
 
 
   };
+  
   return (
     <Modal
       isOpen={isVisibleModal}
@@ -247,7 +248,7 @@ function SignInSignUpModal({
               <span className="forgot-pass">FORGOT PASSWORD?</span>
             </a>
             <a
-              
+              href="/#"
               onClick={(e) => {
                 e.preventDefault();
                 setIsVisibleModal(false);

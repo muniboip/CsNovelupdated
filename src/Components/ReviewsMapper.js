@@ -51,7 +51,7 @@ function ReviewsMapper({ item }) {
           {/* <div className="row comment-row">
             <div className="col-md-6">
               <span className="more-comment">
-                <a href="#">
+                <a href="/#">
                   <i className="fas fa-chevron-down"></i>
                 </a>
               </span>

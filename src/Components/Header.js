@@ -77,7 +77,7 @@ function Header({ authReducer }) {
                 >
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "urban" } });
@@ -87,7 +87,7 @@ function Header({ authReducer }) {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "eastern" } });
@@ -97,7 +97,7 @@ function Header({ authReducer }) {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "sci-fi" } });
@@ -107,7 +107,7 @@ function Header({ authReducer }) {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "all" } });
@@ -170,22 +170,22 @@ function Header({ authReducer }) {
             <div className="col-sm-12 col-12 tabs-header">
               <ul className="nav nav-pills nav-fill">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     Categories
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" >
+                  <a className="nav-link" href="/#" >
                     Ongoing
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" >
+                  <a className="nav-link" href="/#" >
                     Finished
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">New</a>
+                  <a className="nav-link" href="/#">New</a>
                 </li>
               </ul>
             </div>

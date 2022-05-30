@@ -374,7 +374,7 @@ const _onPressCommentSend = () => {
                             </div>
                             <div className="col-md-6">
                               <span className="more-comment">
-                                <a href="#">
+                                <a href="/#">
                                   <i class="fas fa-chevron-down"></i>
                                 </a>
                               </span>
@@ -393,7 +393,7 @@ const _onPressCommentSend = () => {
                                 <i class="far fa-comment"></i>
                               </span>
                               <span>
-                                <a href="#" className="dots">
+                                <a href="/#" className="dots">
                                   ...
                                 </a>
                               </span>

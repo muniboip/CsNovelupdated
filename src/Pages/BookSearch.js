@@ -56,6 +56,7 @@ const BookSearch = ({ getSearchedBooks, authReducer, booksReducer }) => {
 
         {booksReducer?.searchedBooks?.length > 0 ? (
           booksReducer?.searchedBooks?.map((item, index) => {
+            console.log(item)
             const { Title, image, categories } = item;
 
             return (
@@ -69,7 +70,7 @@ const BookSearch = ({ getSearchedBooks, authReducer, booksReducer }) => {
                       book: item,
                       bookId: item?._id,
                       bookName: item?.Title,
-                      bookImage: `${imageUrl}/${item?.image?.name}`,
+                      bookImage: `${item?.image?.url}`,
                     },
                   });
                 }}
@@ -78,7 +79,7 @@ const BookSearch = ({ getSearchedBooks, authReducer, booksReducer }) => {
                   <div className="geeks">
                     <img
                       className="img"
-                      src={`${imageUrl}${image?.name}`}
+                      src={`${image?.url}`}
                       alt="adoptedsoldier"
                     />
                   </div>
