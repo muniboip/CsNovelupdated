@@ -1,6 +1,6 @@
-import { AddComment } from '@mui/icons-material';
+
 import React, { useEffect } from 'react';
-import { Modal } from 'react-bootstrap';
+
 
 function AddComponent (){
   useEffect( ()=> {

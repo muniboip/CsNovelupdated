@@ -1,4 +1,4 @@
-import { imageListItemClasses } from "@mui/material";
+
 import moment from "moment";
 import React from "react";
 import StarRatings from "react-star-ratings";
@@ -12,6 +12,7 @@ function ReviewsMapper({ item }) {
       <div className="row">
         <div className="col-md-1 col-2">
           <img
+          alt="profile-dp"
             src={
               item?.user?.profile_img !== undefined && item?.user?.profile_img !== null && item?.user?.profile_img.name !== null
                 ? `${imageUrl}/${item?.user?.profile_img?.name}`
@@ -25,6 +26,7 @@ function ReviewsMapper({ item }) {
             {`${item?.userId?.username} `}{" "}
             <span>
               <img
+              alt="comment-star"
                 className="comment-head-img"
                 src="https://cdn-icons-png.flaticon.com/512/2190/2190552.png"
               ></img>{" "}

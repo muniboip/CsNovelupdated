@@ -24,7 +24,7 @@ function Top10Mapper({ authReducer, item, index, onClick, getBook }) {
         });
       }}
     >
-      <img  src={`${ item?.Cover?.url}`} className="top10-image" />
+      <img  src={`${ item?.Cover?.url}`} className="top10-image" alt="top10-image" />
       <p className={`top10BookColor_${index + 1}`}>
         {index + 1 < 10 ? `0${index + 1}` : index + 1}
       </p>

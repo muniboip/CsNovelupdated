@@ -20,7 +20,7 @@ const BillingComponent = ({ authReducer }) => {
   const [isopen, setisopen] = useState(false);
   const [immediate, setimmediate] = useState(false);
   const [isload, setisload] = useState(true);
-  const [date, setdate] = useState("");
+  
   const [histor, sethistor] = useState([]);
   var navigate = useNavigate();
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const BillingComponent = ({ authReducer }) => {
     const data = await getpackage();
 
     data.map((item) => {
-      if (item?._id == authReducer?.userData?.package?.product?._id) {
+      if (item?._id === authReducer?.userData?.package?.product?._id) {
         setpackages(item);
         Object.assign(packages, authReducer?.userData?.package);
       }
@@ -244,9 +244,7 @@ const BillingComponent = ({ authReducer }) => {
                       >
                         Cancel Subscription
                       </button>
-                      <h5>
-                        <a href=""> </a>
-                      </h5>
+                      
                     </div>
                   </div>
                 </div>
@@ -279,7 +277,7 @@ const BillingComponent = ({ authReducer }) => {
                   return (
                     <tr key={item._id}>
                       <td>
-                        <a href={item?.invoice} target="_blank">
+                        <a href={item?.invoice}>
                           <button type="button" className="btn  invoicebtn">
                             <BsDownload
                               style={{
@@ -292,19 +290,19 @@ const BillingComponent = ({ authReducer }) => {
                       </td>
                       <td>{item?.amount} $</td>
                       <td>
-                        {item.status != "pending"
+                        {item.status !== "pending"
                           ? item?.active
                             ? "Current"
                             : "Completed"
                           : "Pinding"}
                       </td>
                       <td>
-                        {item.status != "pending"
+                        {item.status !== "pending"
                           ? item?.start?.split("T")[0]
                           : null}
                       </td>
                       <td>
-                        {item.status != "pending"
+                        {item.status !== "pending"
                           ? item?.end?.split("T")[0]
                           : null}
                       </td>

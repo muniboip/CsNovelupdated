@@ -1,8 +1,6 @@
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React, { useEffect, useState } from "react";
-import RenderBookmarks from "./RenderBookmarks";
-import BOOK_CARD from "../Assets/Images/book-card.png";
+
 import { connect } from "react-redux";
 import OngoingNovelsMapper from "./OngoingNovelsMapper";
 import { favoriteThisBook, getBookmarks } from "../store/actions/actions";
@@ -10,8 +8,8 @@ import { favoriteThisBook, getBookmarks } from "../store/actions/actions";
 function BookmarksComp({ booksReducer,authReducer, title}) {
 useEffect(()=>{
   getBookmarks(authReducer.accessToken)
-},[])
-const [isLoading, setIsLoading] = useState(false);
+},[]) 
+
 
 
 const favoriteBookHandler = (_id) => {
@@ -19,7 +17,7 @@ const favoriteBookHandler = (_id) => {
     bookId: _id,
   };
 
-  setIsLoading(true);
+
   favoriteThisBook(data, authReducer.accessToken, "favoritedBooks")
 };
 

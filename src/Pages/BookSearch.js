@@ -18,7 +18,7 @@ const BookSearch = ({ getSearchedBooks, authReducer, booksReducer }) => {
       <div
         className="container search"
         style={
-          booksReducer.searchedBooks.length == 1 ? { height: "500px" } : null
+          booksReducer.searchedBooks.length === 1 ? { height: "500px" } : null
         }
       >
         <div className="search_main">
@@ -114,7 +114,7 @@ const BookSearch = ({ getSearchedBooks, authReducer, booksReducer }) => {
         ) : (
           <div className="data-not">
             {/* <h3>Your Search: {searchText} does not match any book.</h3> */}
-            <img src={Datanotexist} />
+            <img src={Datanotexist}  alt="DonotExist"/>
           </div>
         )}
       </div>

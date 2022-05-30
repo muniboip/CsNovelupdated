@@ -2,8 +2,7 @@ import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { useState, useEffect } from "react";
-import BOOK_CARD from "../Assets/Images/book-card.png";
-import MostWantedNovelsMapper from "../Components/MostWantedNovelsMapper";
+
 import LibraryNovelsMapper from "../Components/LibraryNovelsMapper";
 import {connect} from 'react-redux';
 import * as actions from '../store/actions/actions';

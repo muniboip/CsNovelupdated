@@ -16,17 +16,7 @@ import SliderComp from "../Components/SliderComp";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/actions";
 import THREE_LINES from "../Assets/Images/three-lines.png";
-import BOOK1 from "../Assets/Images/top10/1.png";
-import BOOK2 from "../Assets/Images/top10/2.png";
-import BOOK3 from "../Assets/Images/top10/3.png";
-import BOOK4 from "../Assets/Images/top10/4.png";
-import BOOK5 from "../Assets/Images/top10/5.png";
-import BOOK6 from "../Assets/Images/top10/6.png";
-import BOOK7 from "../Assets/Images/top10/7.png";
-import BOOK8 from "../Assets/Images/top10/8.png";
-import BOOK9 from "../Assets/Images/top10/9.png";
-import BOOK11 from "../Assets/Images/top10/11.png";
-import BOOK12 from "../Assets/Images/top10/12.png";
+
 import URBAN from "../Assets/Images/urban.png";
 import SCIFI from "../Assets/Images/scifi.png";
 import FANTASY from "../Assets/Images/fantasy.png";
@@ -35,10 +25,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import CompletedNovels from "../Components/CompletedNovels";
 import "../Styles/Mirza.css";
-import SignInSignUpModal from "../Components/SignInSignUpModal";
-import AuthModal from "../Components/AuthModal";
+
 import { useNavigate } from "react-router-dom";
-import { imageUrl } from "../config";
+
 
 const HomePage = ({
   authReducer,
@@ -146,7 +135,7 @@ const HomePage = ({
   const [top10, setTop10] = useState([]);
   const [recent, setRecent] = useState([]);
 
-  const [images, setImages] = useState([
+  const images=[
     {
       _id: 1,
       image: SLIDE_IMAGE_1,
@@ -159,7 +148,7 @@ const HomePage = ({
       _id: 3,
       image: SLIDE_IMAGE_1,
     },
-  ]);
+  ];
 
   const favoriteBookHandler = (id) => {
     const data = {
@@ -318,7 +307,7 @@ const HomePage = ({
                   <span className="gradient-green-ball" />
                   <span className="gradient-red-ball" />
                   <div className="three-lines">
-                    <img src={THREE_LINES} className="three-lines-image" />
+                    <img src={THREE_LINES} className="three-lines-image" alt="three-lines-image" />
                   </div>
                   <div className="free-book-image">
                     <div>
@@ -333,6 +322,7 @@ const HomePage = ({
                     <img
                       src={freeBookOfWeek.image}
                       className="free-book-image"
+                      alt="free-book-image"
                     />
                   </div>
 

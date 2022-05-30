@@ -5,7 +5,7 @@ const LibraryNovelsMapper = ({ item }) => {
   return (
     // <div className="col-md-12">
     <div className="books-display">
-      <img src={item.image} />
+      <img src={item.image} alt="book display"/>
       <p className="book-title">
           {str.length > 20 && str.substring(0,20)}...
       </p>

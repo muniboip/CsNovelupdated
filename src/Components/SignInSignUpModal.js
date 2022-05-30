@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { connect } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import * as actions from "../store/actions/actions";
 
 function SignInSignUpModal({
@@ -243,11 +243,11 @@ function SignInSignUpModal({
         </form>
         {mode === "login" && (
           <div className="forget">
-            <a href="">
+            <a >
               <span className="forgot-pass">FORGOT PASSWORD?</span>
             </a>
             <a
-              href=""
+              
               onClick={(e) => {
                 e.preventDefault();
                 setIsVisibleModal(false);

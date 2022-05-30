@@ -1,10 +1,10 @@
-import { faThLarge, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import {  faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Slider from "react-slick";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div
       className={className}
@@ -18,7 +18,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className,  onClick } = props;
   return (
     <div
       className={className}
@@ -99,7 +99,7 @@ function SliderComp({ images }) {
         //     backgroundColor: "red",
         //   }}
         // >
-        <img key={ele._id} src={ele.image} className="slider-image" />
+        <img key={ele._id} src={ele.image} className="slider-image" alt="slider-image" />
         // </div>
       ))}
     </Slider>

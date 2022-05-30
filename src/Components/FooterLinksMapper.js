@@ -9,7 +9,7 @@ function FooterLinksMapper({ item, mode,key  }) {
   return (
     <a
       href={item.link?item.link: '#'}      
-      target="_blank"
+      
       className="link-item"
       onClick={(e) => {
         e.preventDefault();

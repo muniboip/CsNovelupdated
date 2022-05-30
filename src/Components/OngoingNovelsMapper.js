@@ -1,13 +1,12 @@
-import React, { useEffect, useReducer, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThLarge, faBook } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { imageUrl } from "../config";
 import * as actions from "../store/actions/actions";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 import filledBookmark from "../Assets/filledbookmark.jpg";
-import { booksReducer } from "../store/reducers/booksReducer";
+
 
 function OngoingNovelsMapper({
   item,
@@ -31,16 +30,16 @@ function OngoingNovelsMapper({
   const [state, setstate] = useState(true);
   useEffect(() => {
     setdata(item);
-  });
+  },[]);
   useEffect(() => {
     setdata(
       booksReducer?.books?.filter((e) => {
-        return e?._id == item?._id;
+        return e?._id === item?._id;
       })[0]
     );
   }, [state]);
 
-  if (from == "Bookmarks") {
+  if (from === "Bookmarks") {
     return (
       <div className="col-lg-2 col-md-3 col-sm-4 og-books">
         <div
@@ -58,7 +57,7 @@ function OngoingNovelsMapper({
             });
           }}
         >
-          <img src={` ${data?.book.Cover?.url}`} className="og-book-image" />
+          <img src={` ${data?.book.Cover?.url}`} className="og-book-image" alt="og-book" />
           {/* <p className="mp-cs-text">CS</p> */}
           {/* <p className="og-book-status">{item.status} </p> */}
           {/* <p className="og-book-heading">{item.heading} </p> */}
@@ -81,6 +80,7 @@ function OngoingNovelsMapper({
           >
             {"   "}
             <img
+            alt="fileedbookmark"
               src={filledBookmark}
               style={{ height: "30px", "margin-left": "10px" }}
             />
@@ -106,7 +106,7 @@ function OngoingNovelsMapper({
         }}
       >
         <div className="og-image-and-text-container">
-          <img src={` ${data?.Cover?.url}`} className="og-book-image" />
+          <img src={` ${data?.Cover?.url}`} className="og-book-image" alt="og-image"/>
           {/* <p className="mp-cs-text">CS</p> */}
           {/* <p className="og-book-status">{item.status} </p> */}
           {/* <p className="og-book-heading">{item.heading} </p> */}

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import StarRatings from "react-star-ratings";
-import CSGO from "../Assets/Images/Go.png";
+
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/actions";
@@ -53,6 +53,7 @@ function HeaderDropdown({ closeDropDown, logout, authReducer }) {
               height: "60px",
               borderRadius: 50,
             }}
+            alt="user-dp"
             onClick={() => closeDropDown(false)}
             src={`${baseUrl}/public/${authReducer?.userData?.profile_img?.name}`}
           />

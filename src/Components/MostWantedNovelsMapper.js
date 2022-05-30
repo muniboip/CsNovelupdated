@@ -1,13 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThLarge, faBook } from "@fortawesome/free-solid-svg-icons";
+
 import "../Styles/clientStyles.css";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import CI from "./../Assets/Images/Categories Icon.svg";
 import * as actions from "../store/actions/actions";
 // import * as types from '../store/actions/actions'
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { imageUrl } from "../config";
+
 import { toast } from "react-toastify";
 function MostWantedNovelsMapper({
   item,
@@ -20,7 +19,7 @@ function MostWantedNovelsMapper({
   
   const navigate = useNavigate();
   const isLogin = authReducer?.isLogin;
-  const [data,setdata] = useState(item)
+  
   
 
   return (
@@ -43,6 +42,7 @@ function MostWantedNovelsMapper({
         <img
           src={`${item?.Cover?.url}`}
           className="mp-book-cover"
+          alt="mp-book-cover"
         />
       </div>
 
@@ -56,7 +56,7 @@ function MostWantedNovelsMapper({
         </p>
 
         <div className="mp-book-category">
-          <img src={CI} className="mp-book-cat-icon" />
+          <img src={CI} className="mp-book-cat-icon"  alt="mp-book"/>
           <p className="mp-book-category-tag">{item?.categories?.name}</p>
           {/* <p className="mp-book-status">{item?.rele}</p> */}
         </div>
@@ -82,7 +82,7 @@ function MostWantedNovelsMapper({
 
             if (isLogin) {
               favoriteBookHandler(item._id);
-              setdata(prevState =>({...prevState , isLike:!prevState.isLike}))
+              
               
             } else {
               toast.info("Login Required!");

@@ -5,8 +5,8 @@ import Logo from "../Assets/Images/csnovels-logo.svg";
 import google_img from "../Assets/Images/google.png";
 import email_img from "../Assets/Images/email (2).png";
 import discord_img2 from "../Assets/Images/discord (2).png";
-import DiscordOauth2 from "discord-oauth2";
-import { apiUrl } from "../config";
+
+
 import * as actions from "../store/actions/actions";
 import { connect } from "react-redux";
 
@@ -17,7 +17,7 @@ function AuthModal({
   setIsVisibleModal,
   setIsVisibleSignInSignUpModal,
 }) {
-  const [isLoading, setIsLoading] = useState(false);
+  
   const customStyles = {
     content: {
       top: "50%",
@@ -29,7 +29,7 @@ function AuthModal({
     },
   };
 
-  const oauth = new DiscordOauth2();
+  
 
   const discordAuth = async () => {
     alert("SAD");
@@ -90,7 +90,7 @@ function AuthModal({
   };
 
   const responseGoogle = (response) => {
-    setIsLoading(true);
+    
     const data = {
       email: response.profileObj.email,
       firstName: response.profileObj.givenName,
@@ -101,7 +101,7 @@ function AuthModal({
   };
 
   const onLoginFailed = () => {
-    setIsLoading(false);
+
   };
 
   const onLoginSuccess = () => {
@@ -141,7 +141,7 @@ function AuthModal({
             stroke-width="4"
           />
         </svg>
-        <img src={Logo} className="header-logo" />
+        <img src={Logo} className="header-logo" alt="header-logo" />
         <h2 style={{ color: "black", marginTop: "30px" }}>
           Welcome To Canned Splam
         </h2>
@@ -162,6 +162,7 @@ function AuthModal({
                 onClick={() => renderProps.onClick()}
               >
                 <img
+                alt="google-Icon"
                   className="google-Icon"
                   src={google_img}
                   style={{ width: "35px", height: "auto" }}
@@ -197,7 +198,7 @@ function AuthModal({
           className="discord-logIn-div"
         >
           <span className="discord-Icon">
-            <img src={discord_img2} style={{ width: "35px", height: "auto" }} />
+            <img src={discord_img2} alt="discord_icon" style={{ width: "35px", height: "auto" }} />
           </span>
 
           <p className="discord-logIn-p">
@@ -215,7 +216,7 @@ function AuthModal({
           className="email-logIn-div"
         >
           <span className="email-Icon">
-            <img src={email_img} style={{ width: "35px", height: "auto" }} />
+            <img src={email_img} style={{ width: "35px", height: "auto" }} alt="email_icon" />
           </span>
           <p className="email-login-p">LOGIN WITH EMAIL</p>
         </div>

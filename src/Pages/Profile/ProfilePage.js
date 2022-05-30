@@ -11,14 +11,13 @@ import Footer from "../../Components/Footer";
 import Header from "../../Components/Header";
 import FreeBookComp from "../../Components/FreeBookComp";
 import MostWantedNovelsMapper from "../../Components/MostWantedNovelsMapper";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import BillingComponent from "./BillingComponent";
 import * as actions from "../../store/actions/actions";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import { apiUrl, baseUrl, imageUrl } from "../../config";
-import AdSense from "react-adsense";
+
+
 import { useNavigate } from "react-router-dom";
 import lock from "../../Assets/lock2.PNG";
 function ProfilePage({

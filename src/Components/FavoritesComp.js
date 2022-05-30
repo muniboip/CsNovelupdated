@@ -1,13 +1,11 @@
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React, { useState } from "react";
 import OngoingNovelsMapper from "./OngoingNovelsMapper";
-import BOOK_CARD from "../Assets/Images/book-card.png";
-import { connect } from "react-redux";
+
 
 
 function FavoritesComp({ title, books ,accessToken,favoriteBookHandler}) {
-  const [isLoading, setIsLoading] = useState(false);
+  
   
   // const favoriteBookHandler = (item) => {
   

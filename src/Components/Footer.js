@@ -9,57 +9,64 @@ import FooterLinksMapper from "./FooterLinksMapper";
 import { connect } from "react-redux";
 
 function Footer({ booksReducer }) {
-  const [categories, setCategories] = useState([
-    {
-      _id: 1,
-      label: "urban",
-    },
-    {
-      _id: 2,
-      label: "eastern",
-    },
-    {
-      _id: 3,
-      label: "sci-fi",
-    },
-    {
-      _id: 4,
-      label: "romance",
-    },
-  ]);
+  
+  const [categories, setCategories] = useState();
 
-  const [popular, setPopular] = useState([
-    {
-      _id: 1,
-      label: "popular",
-    },
-    {
-      _id: 2,
-      label: "rating",
-    },
-    {
-      _id: 3,
-      label: "last updated",
-    },
-  ]);
+  const [popular, setPopular] = useState();
 
-  const [contact, setContact] = useState([
-    {
-      _id: 1,
-      label: "contact us",
-    },
-    {
-      _id: 2,
-      label: "support",
-    },
-    {
-      _id: 3,
-      label: "discord",
-      link: "https://discord.gg/HwMzcdJ",
-    },
-  ]);
+  const [contact, setContact] = useState();
 
   useEffect(() => {
+
+    setCategories([
+      {
+        _id: 1,
+        label: "urban",
+      },
+      {
+        _id: 2,
+        label: "eastern",
+      },
+      {
+        _id: 3,
+        label: "sci-fi",
+      },
+      {
+        _id: 4,
+        label: "romance",
+      },
+    ])
+
+    setContact([
+      {
+        _id: 1,
+        label: "contact us",
+      },
+      {
+        _id: 2,
+        label: "support",
+      },
+      {
+        _id: 3,
+        label: "discord",
+        link: "https://discord.gg/HwMzcdJ",
+      },
+    ])
+
+    setPopular([
+      {
+        _id: 1,
+        label: "popular",
+      },
+      {
+        _id: 2,
+        label: "rating",
+      },
+      {
+        _id: 3,
+        label: "last updated",
+      },
+    ])
     let mostPopularNovels = booksReducer?.books?.filter(
       (ele) => ele?.isPopular
     );
@@ -79,7 +86,7 @@ function Footer({ booksReducer }) {
             {/* 1st column  */}
             <div className="col-lg-4 col-md-4 col-sm-3">
               <div className="footer-1st-col">
-                <img src={LOGO} className="footer-logo" />
+                <img src={LOGO} className="footer-logo" alt="footer-logo" />
                 <div className="copyrights-and-social">
                   <div className="social-icons-div">
                     <FontAwesomeIcon
@@ -99,7 +106,7 @@ function Footer({ booksReducer }) {
             <div className="col-lg-2 col-md-2 col-sm-3">
               <div className="links-container">
                 <p className="links-heading">categories</p>
-                {categories.map((ele, idx) => (
+                {categories?.map((ele, idx) => (
                   <FooterLinksMapper mode="categories" item={ele} key={idx} />
                 ))}
               </div>

@@ -1,8 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { connect } from "react-redux";
 
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import { useNavigate } from "react-router-dom";
 import * as actions from "../store/actions/actions"
 function HeaderSearch({ getSearchedBooks, authReducer, text, setText }) {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Logo from "../Assets/Images/csnovels-logo.svg";
 import CS from "../Assets/Images/cs.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThLarge, faSortDown } from "@fortawesome/free-solid-svg-icons";
+import {  faSortDown } from "@fortawesome/free-solid-svg-icons";
 import HeaderSearch from "./HeaderSearch";
 import HeaderDropdown from "./HeaderDropdown";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ import { connect, useSelector } from "react-redux";
 import SignInSignUpModal from "./SignInSignUpModal";
 import AuthModal from "./AuthModal";
 import ForgetPasswordModal from "./ForgetPasswordModal";
-import { baseUrl } from "../config";
+
 import profile from "../Assets/Images/dp-placeholder.jpg"
 function Header({ authReducer }) {
   const [text, setText] = useState("");
@@ -31,8 +31,8 @@ function Header({ authReducer }) {
         <div className="container">
           <div className="row header-items ">
             <div className="myitem col-md-3" onClick={() => navigate("/")}>
-              <img src={Logo} className="header-logo" />
-              <img src={CS} className="small-logo" />
+              <img src={Logo} className="header-logo" alt="header-logo" />
+              <img src={CS} className="small-logo" alt="small-logo" />
             </div>
 
             <div className="myitem col-md-3 mt-2">
@@ -78,7 +78,7 @@ function Header({ authReducer }) {
                 >
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "urban" } });
@@ -88,7 +88,7 @@ function Header({ authReducer }) {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "eastern" } });
@@ -98,7 +98,7 @@ function Header({ authReducer }) {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "sci-fi" } });
@@ -108,7 +108,7 @@ function Header({ authReducer }) {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    
                     onClick={(e) => {
                       e.preventDefault();
                       navigate("/search", { state: { genre: "all" } });
@@ -126,7 +126,7 @@ function Header({ authReducer }) {
               <div className="myitem col-md-2 comunity-and-user-icon">
                 <a
                   href="https://discord.gg/HwMzcdJ"
-                  target="_blank"
+                  
                   className="community-link"
                 >
                   community
@@ -138,6 +138,7 @@ function Header({ authReducer }) {
                     height: "45px",
                     borderRadius: 50,
                   }}
+                  alt="user-dp"
                   onClick={() => setShowDropdown(true)}
                   src={`${authReducer?.userData?.profile_img ? authReducer?.userData?.profile_img.url : profile}`}
                 />
@@ -170,17 +171,17 @@ function Header({ authReducer }) {
             <div className="col-sm-12 col-12 tabs-header">
               <ul className="nav nav-pills nav-fill">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link">
                     Categories
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" >
                     Ongoing
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" >
                     Finished
                   </a>
                 </li>

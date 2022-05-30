@@ -101,9 +101,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "all" && "darkgrey",
+                            background: genre === "all" && "darkgrey",
 
-                            color: genre == "all" && "white",
+                            color: genre === "all" && "white",
                           }}
                           className={`nav-link `}
                           href="#"
@@ -122,9 +122,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "urban" && "darkgrey",
+                            background: genre === "urban" && "darkgrey",
 
-                            color: genre == "urban" && "white",
+                            color: genre === "urban" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -143,9 +143,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "eastern" && "darkgrey",
+                            background: genre === "eastern" && "darkgrey",
 
-                            color: genre == "eastern" && "white",
+                            color: genre === "eastern" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -164,9 +164,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "games" && "darkgrey",
+                            background: genre === "games" && "darkgrey",
 
-                            color: genre == "games" && "white",
+                            color: genre === "games" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -185,9 +185,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "fantasy" && "darkgrey",
+                            background: genre === "fantasy" && "darkgrey",
 
-                            color: genre == "fantasy" && "white",
+                            color: genre === "fantasy" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -206,9 +206,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "sci-fi" && "darkgrey",
+                            background: genre === "sci-fi" && "darkgrey",
 
-                            color: genre == "sci-fi" && "white",
+                            color: genre === "sci-fi" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -227,9 +227,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "horror" && "darkgrey",
+                            background: genre === "horror" && "darkgrey",
 
-                            color: genre == "horror" && "white",
+                            color: genre === "horror" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -248,9 +248,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "sports" && "darkgrey",
+                            background: genre === "sports" && "darkgrey",
 
-                            color: genre == "sports" && "white",
+                            color: genre === "sports" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -269,9 +269,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "action" && "darkgrey",
+                            background: genre === "action" && "darkgrey",
 
-                            color: genre == "action" && "white",
+                            color: genre === "action" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -290,9 +290,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "war" && "darkgrey",
+                            background: genre === "war" && "darkgrey",
 
-                            color: genre == "war" && "white",
+                            color: genre === "war" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -311,9 +311,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "realistic" && "darkgrey",
+                            background: genre === "realistic" && "darkgrey",
 
-                            color: genre == "realistic" && "white",
+                            color: genre === "realistic" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -332,9 +332,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "history" && "darkgrey",
+                            background: genre === "history" && "darkgrey",
 
-                            color: genre == "history" && "white",
+                            color: genre === "history" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -353,9 +353,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: genre == "acg" && "darkgrey",
+                            background: genre === "acg" && "darkgrey",
 
-                            color: genre == "acg" && "white",
+                            color: genre === "acg" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -383,9 +383,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: contentType == "all" && "darkgrey",
+                            background: contentType === "all" && "darkgrey",
 
-                            color: contentType == "all" && "white",
+                            color: contentType === "all" && "white",
                           }}
                           className="nav-link active"
                           href="#"
@@ -402,9 +402,9 @@ function FilterBooks({
                         <a
                           style={{
                             background:
-                              contentType == "translate" && "darkgrey",
+                              contentType === "translate" && "darkgrey",
 
-                            color: contentType == "translate" && "white",
+                            color: contentType === "translate" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -420,9 +420,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: contentType == "original" && "darkgrey",
+                            background: contentType === "original" && "darkgrey",
 
-                            color: contentType == "original" && "white",
+                            color: contentType === "original" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -438,9 +438,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: contentType == "mtl" && "darkgrey",
+                            background: contentType === "mtl" && "darkgrey",
 
-                            color: contentType == "mtl" && "white",
+                            color: contentType === "mtl" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -463,9 +463,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: contentStatus == "all" && "darkgrey",
+                            background: contentStatus === "all" && "darkgrey",
 
-                            color: contentStatus == "all" && "white",
+                            color: contentStatus === "all" && "white",
                           }}
                           className="nav-link active"
                           href="#"
@@ -482,9 +482,9 @@ function FilterBooks({
                         <a
                           style={{
                             background:
-                              contentStatus == "completed" && "darkgrey",
+                              contentStatus === "completed" && "darkgrey",
 
-                            color: contentStatus == "completed" && "white",
+                            color: contentStatus === "completed" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -501,9 +501,9 @@ function FilterBooks({
                         <a
                           style={{
                             background:
-                              contentStatus == "ongoing" && "darkgrey",
+                              contentStatus === "ongoing" && "darkgrey",
 
-                            color: contentStatus == "ongoing" && "white",
+                            color: contentStatus === "ongoing" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -529,9 +529,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: sortBy == "popular" && "darkgrey",
+                            background: sortBy === "popular" && "darkgrey",
 
-                            color: sortBy == "popular" && "white",
+                            color: sortBy === "popular" && "white",
                           }}
                           className="nav-link active"
                           href="#"
@@ -548,9 +548,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: sortBy == "recommended" && "darkgrey",
+                            background: sortBy === "recommended" && "darkgrey",
 
-                            color: sortBy == "recommended" && "white",
+                            color: sortBy === "recommended" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -567,9 +567,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: sortBy == "rating" && "darkgrey",
+                            background: sortBy === "rating" && "darkgrey",
 
-                            color: sortBy == "rating" && "white",
+                            color: sortBy === "rating" && "white",
                           }}
                           className="nav-link"
                           href="#"
@@ -586,9 +586,9 @@ function FilterBooks({
                       >
                         <a
                           style={{
-                            background: sortBy == "timeUpdate" && "darkgrey",
+                            background: sortBy === "timeUpdate" && "darkgrey",
 
-                            color: sortBy == "timeUpdate" && "white",
+                            color: sortBy === "timeUpdate" && "white",
                           }}
                           className="nav-link"
                         >

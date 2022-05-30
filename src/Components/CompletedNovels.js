@@ -1,7 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThLarge, faBook } from "@fortawesome/free-solid-svg-icons";
-import { imageUrl } from "../config";
+
 import * as actions from "../store/actions/actions";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
@@ -35,6 +33,7 @@ function CompletedNovels({
         <img
           src={`${item?.Cover?.url}`}
           className="completed-book-image"
+          alt="completed-book-image"
         />
         {/* <p className="mp-cs-text">CS</p>
         <p className="completed-book-status">{item.status} </p>

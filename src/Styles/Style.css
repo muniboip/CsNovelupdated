@@ -3001,6 +3001,7 @@ span.rating i {
 .cancelbtn {
   height: 45px;
   width: min-content;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
