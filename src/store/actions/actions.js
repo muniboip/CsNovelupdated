@@ -25,17 +25,17 @@ export const userLogin = (data, loginSuccess) => async (dispatch) => {
     toast.error(err.response.data.msg);
   }
 };
-export const subscription = async (token, interval, product) => {
-  try {
-    const data = {
-      token: token,
-      interval: interval,
-      product: product,
-    };
-  } catch (err) {
-    toast.error(err.response.data.msg);
-  }
-};
+// export const subscription = async (token, interval, product) => {
+//   try {
+//     const data = {
+//       token: token,
+//       interval: interval,
+//       product: product,
+//     };
+//   } catch (err) {
+//     toast.error(err.response.data.msg);
+//   }
+// };
 export const getpackagehistory = async (token) => {
   try {
     const header = {

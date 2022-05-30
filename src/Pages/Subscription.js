@@ -18,7 +18,7 @@ import StripeCheckout from "react-stripe-checkout";
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
 import edit_modify_icon from "../Assets/Images/edit_modify_icon.png";
-import { stepContentClasses } from "@mui/material";
+
 const override = css`
   display: block;
   margin: 0 auto;
@@ -37,7 +37,7 @@ function Subscription({ authReducer }) {
   const [checked, setchecked] = useState(false);
   const [product, setproduct] = useState("");
   const [load, setload] = useState(true);
-  const [customdisabled, setcustomdisabled] = useState(false);
+  
   let [loading] = useState(true);
   let [color] = useState("#ffffff");
   const [updateamount, setupdateamount] = useState(false);
@@ -82,12 +82,12 @@ function Subscription({ authReducer }) {
     }
     getPackages();
 
-    if (
-      parseInt(authReducer.userData?.package?.amount) === 15 ||
-      parseInt(authReducer.userData?.package?.amount) === 9
-    ) {
-      setcustomdisabled(true);
-    }
+    // if (
+    //   parseInt(authReducer.userData?.package?.amount) === 15 ||
+    //   parseInt(authReducer.userData?.package?.amount) === 9
+    // ) {
+    //   setcustomdisabled(true);
+    // }
   }, [authReducer]);
 
   useEffect(() => {
@@ -228,7 +228,7 @@ function Subscription({ authReducer }) {
                 </div>
               </div>
             );
-          } else if (!item.free && authReducer.userData?.package === null || parseInt(authReducer.userData?.package?.amount) !== item.amount) {
+          } else if ((!item.free && authReducer.userData?.package === null )|| (parseInt(authReducer.userData?.package?.amount) !== item.amount)) {
             return (
               <div className="sign-up upgrade">
                 <div className="free dollar">
@@ -417,7 +417,7 @@ function Subscription({ authReducer }) {
                     }}
                     className="edittag"
                   >
-                    <img src={edit_modify_icon} className="editlogo" />I want to
+                    <img src={edit_modify_icon} className="editlogo" alt="edit" />I want to
                     donate more
                   </div>
                   <div className="amountcontainer">
