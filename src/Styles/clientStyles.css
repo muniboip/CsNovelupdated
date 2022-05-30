@@ -1,0 +1,243 @@
+.container {
+  margin: 0 auto;
+  max-width: 1115px;
+  width: 100%;
+}
+/***************** MOST POPULAR BOOK HEADER ******************/
+.mp-books-header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+p.mp-books-header-title {
+  border-left: solid;
+  padding-left: 14px;
+  font-family: montserrat;
+  text-transform: uppercase;
+  font-size: 37px;
+  font-weight: 500;
+  border-color: #ffc240;
+  border-width: 4px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+p.mp-books-view-all {
+  margin-left: auto;
+  margin-right: 20px;
+  font-family: montserrat;
+  color: #757575;
+  text-transform: uppercase;
+  font-size: 14px;
+  background: #ebebeb;
+  padding: 10px 18px 10px 18px;
+  border-radius: 333px;
+  align-items: center;
+}
+p.mp-books-view-all:hover {
+  cursor: pointer;
+  background: #c3c3c3;
+  color: #555555;
+}
+/***************** MOST POPULAR BOOK ROW ******************/
+.mp-books-row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+/***************** MOST POPULAR BOOK CARD *****************/
+.most-popular-books {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px 0 20px;
+  max-width: 46%;
+}
+/******** MP COVER IMAGE ********/
+img.mp-book-cover {
+  height: 166px;
+  width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+}
+img.mp-book-cover:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+/************ MP BOOK DETAILS ************/
+.book-details {
+  padding-left: 12px;
+  max-width: 65%;
+}
+/******** MP TITLE ********/
+.mp-book-title {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  max-height: 44px;
+  text-transform: capitalize;
+  color: #444444;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 0;
+  margin-top: 3px;
+}
+p.mp-book-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/******** MP CATEGORY ********/
+.mp-book-category {
+  display: flex;
+  max-height: 36px;
+  align-items: initial;
+  align-items: center;
+  margin-top: 4px;
+}
+img.mp-book-cat-icon {
+  width: 18px;
+}
+
+p.mp-book-category-tag {
+  font-family: montserrat;
+  text-transform: capitalize;
+  padding-left: 4px;
+  font-weight: 400;
+  color: #8d939d;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 6px 0;
+}
+
+p.mp-book-status {
+  /* margin-left: 0; */
+  font-family: "montserrat";
+  text-transform: capitalize;
+  padding-left: 4px;
+  font-weight: 400;
+  color: #8d939d;
+  font-size: 15px;
+  line-height: 15px;
+  /* margin: auto; */
+}
+
+/******** MP DESCRIPTION ********/
+p.mp-book-description {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  max-height: 57px;
+  text-transform: capitalize;
+  color: #444444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 0;
+  padding: 2px 0 2px 0;
+  width: 100%;
+}
+/******** MP CHAPTER COUNT ********/
+.mp-book-chapters {
+  display: flex;
+  margin: 0;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  align-items: center;
+}
+
+img.mp-book-chapter-icon {
+  width: 12px;
+}
+
+p.mp-book-chapter-number {
+  padding-left: 4px;
+  font-family: montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444444;
+  margin: 0;
+}
+
+svg.mp-favorite-heart-unfilled {
+  transform: scale(0.8);
+  margin-left: auto;
+  fill: #8d939d;
+}
+
+svg.mp-favorite-heart-unfilled:hover {
+  fill: #f70000;
+  cursor: pointer;
+}
+
+svg.mp-favorite-heart-unfilled:active {
+  fill: #f70000;
+}
+/* Favorites Heart source link - https://iconmonstr.com/heart-thin-svg/ */
+
+@media screen and (max-width: 1440px) {
+  p.mp-books-header-title {
+    font-size: 30px;
+  }
+
+  .mp-book-title {
+    font-size: 16px;
+  }
+
+  p.mp-book-description {
+    font-size: 13px;
+  }
+
+  p.mp-book-chapter-number {
+    font-size: 13px;
+  }
+
+  p.mp-books-view-all {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  p.mp-books-header-title {
+    font-size: 28px;
+  }
+
+  .mp-book-title {
+    font-size: 14px;
+  }
+
+  p.mp-book-description {
+    font-size: 12px;
+  }
+
+  p.mp-book-chapter-number {
+    font-size: 11px;
+  }
+
+  .most-popular-books {
+    max-width: 64%;
+  }
+
+  p.mp-books-view-all {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  p.mp-books-view-all {
+    margin-right: 0;
+    padding: 8px 16px;
+  }
+}

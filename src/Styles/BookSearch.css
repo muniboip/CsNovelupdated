@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,200&display=swap');
+/* .book-search{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: Nunito Sans,SF Pro Text,SF Pro Icons,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  background-color: #f5f6fc;
+} */
+.search{
+  /* height: 500px !important; */
+}
+.search_main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search_inp:hover{
+  border-bottom: 1px solid blue;
+}
+.search_input input{
+  border-top:none ;
+  border-left:none ;
+  border-right:none ;
+  font-size: 30px;
+  font-weight: normal;
+}
+.search_input{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.bi-search{
+  color: #b3b3b3;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+.search_inp{
+  width: 700px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: 0;
+  border-bottom: 1px solid grey;
+  
+}
+.search_input :placeholder-shown{
+  font-size: 40px;
+  height: 50px;
+}
+.search_inp :hover{
+  border-bottom: purple;
+}
+.all_buttons ._line{
+  position: absolute;
+  top: 100%;
+  margin-top: -2px;
+  transition: .3s;
+  border-top: 2px solid #3b66f5;
+}
+.card_main i{
+  vertical-align: middle !important;
+  background-repeat: no-repeat !important;
+  text-align: center !important;
+  display: flex;
+  margin-left: 10px;
+  color: #999;
+  border: none;
+}
+
+.all_buttons{
+  position: relative;
+  display: flex; 
+  justify-content: center;
+   align-items: center;
+}
+.fan_fic{
+  margin-left: 5%;
+}
+.comics{
+  margin-left: 5%;
+}
+/* .buttons button{
+  color: #999;
+  border: none;
+}
+.buttons button:hover{
+  color: blue;
+  transition: smooth 0.1s ease-out;
+  border-bottom:2px solid blue
+} */
+.card_main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  
+}
+.card_body{
+height: 100%;
+}
+.img_div{
+  border: 2px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.card_ img {
+  width: 96px;
+  cursor: pointer;
+  height: 128px;
+  transform-origin: 50% 65%;
+  transform: .3s ease-out;
+}
+.card_{
+  border: none;
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.geeks{
+  width: 100px;
+  height: 128px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius:8px;
+}
+.geeks img{
+  width: 96px;
+  transition: 0.5s all ease-in-out;
+}
+.geeks:hover img {
+  transform: scale(1.5);
+}
+.g_thumb img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.card_ img:hover{
+  filter: brightness(100%);
+  transform: scale(1.2);
+}
+.card_main img{
+  font-size: 0;
+  display: inline-block;
+}
+.card_ .adopted_button{
+  margin-left: 20px;
+  text-align: start;
+  background: none  ;
+  font-weight: bolder;
+  font-size: 20px;
+  text-transform: capitalize;
+  height: 30px;
+  border: none;
+}
+.last_name{
+  color: blue;
+}
+.card_content{
+  display: flex;
+  flex-direction: column;
+}
+.buttons_all button{
+  font-size: smaller;
+  color: blue;
+  border: blue 1px solid;
+  border-radius: 50px;
+  padding: 1px 5px ;
+  margin-left: 18px;
+  text-transform: capitalize;
+  cursor:default;
+}
+.search_input button{
+  border: none;
+  vertical-align: middle !important;
+  margin-left: 10px;
+  color: #999;
+  background-color: white;
+  border: none;
+}
+/* .buttons_all button:hover{
+  transition: 1s;
+  background-color: #f2f2f2;
+}
+.buttons_all{
+  display: flex;
+  margin-left: 10px
+} */
+.checked {
+  color: orange;
+}
+.card_ .rating{
+  margin-left:20px ;
+  height: 20px;
+}
+.rating{
+  display: flex;
+  margin-top: 10px;
+}
+.rating p{
+  margin-left: 5px;
+  margin-top: 7px;
+  font-size: 12px;
+}
+.desc-book{
+  margin: 0px;
+  display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.content{
+  margin-left: 20px;
+}

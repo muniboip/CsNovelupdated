@@ -1,0 +1,1247 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  text-decoration: none;
+  list-style: none;
+  font-family: Montserrat, sans-serif;
+}
+
+.container-1400 {
+  max-width: 1400px;
+  margin: 0px auto;
+}
+
+.user-record img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+
+  position: relative;
+}
+
+.header {
+  background: rgb(243, 243, 243);
+  padding: 10px 0 10px 0;
+}
+
+span.span-star {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 900;
+}
+
+.fa-star::before {
+  content: "";
+  color: gold;
+}
+
+.choose-image-div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 25px;
+  top: 110px;
+  left: 125px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.choose-image-div i {
+  font-size: 20px;
+}
+.cs-pro p {
+  padding-top: 20px;
+  font-size: 18px;
+  color: rgba(120, 120, 120, 0.65);
+}
+
+.user-edit {
+  padding-left: 20px;
+}
+
+.user-record {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.user-record h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.email-record h6 {
+  font-size: 23px;
+}
+
+ul.navbar-nav.ml-auto.header-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+ul.navbar-nav.ml-auto.header-bar li a {
+  font-size: 20px;
+  margin-left: 70px;
+  color: black;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hover-effect {
+  position: relative;
+}
+
+a.nav-link.hover-effect:hover {
+  background-color: unset !important;
+  color: rgb(65, 155, 205) !important;
+}
+
+.hover-effect::after {
+  width: 0px;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background: goldenrod;
+  color: white;
+  left: 7px;
+  bottom: 0px;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.hover-effect:hover::after {
+  width: 100%;
+}
+
+a.nav-link.hover-effect.active::after {
+  width: 100%;
+}
+
+.sec-1 {
+  padding-top: 80px;
+}
+
+.sec-3 {
+  padding-top: 80px;
+}
+
+.change_pass_component.sec-3 {
+  padding-top: 0px;
+}
+.row.profile-sec {
+  padding-bottom: 20px;
+}
+
+span.input-font i {
+  margin-top: 9px;
+}
+
+.profile input:focus {
+  background: rgb(217, 215, 215);
+}
+
+.sec-1 h1 {
+  font-size: 35px;
+  font-family: Montserrat;
+  font-weight: 600;
+  padding: 20px 0px;
+}
+
+.profile-edit {
+  background: rgb(243, 243, 243);
+  padding: 30px;
+}
+
+.change-password {
+  background: rgb(243, 243, 243);
+  padding: 30px;
+}
+
+.profile input {
+  width: 100%;
+  height: 45px;
+  padding: 0px 15px;
+  border: 1px solid rgba(187, 179, 179, 0.43);
+  border-radius: 7px;
+  outline: none;
+}
+
+.profile h6 {
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.38);
+  margin: 0px;
+}
+
+.profile input::placeholder {
+  color: rgba(0, 0, 0, 0.76);
+  font-weight: 500;
+}
+
+.profile-button {
+  text-align: end;
+}
+
+.profile-button button {
+  width: 170px;
+  height: 45px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 45px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.82);
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon span {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  font-size: 25px;
+  width: 53px;
+  height: 45px;
+  padding-top: 0px;
+  text-align: center;
+  background: white;
+  border: 1px solid rgb(225, 222, 222);
+  border-radius: 7px 0px 0px 7px;
+}
+
+.profile.input-icon input {
+  padding-left: 65px;
+}
+
+.input-icon span i {
+  color: rgb(151, 151, 151);
+}
+
+.accounts-features {
+  background: rgb(243, 243, 243);
+  padding: 20px 20px 0px;
+}
+
+.sec-2 h1 {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 35px;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.feature h6 {
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.feature {
+  position: relative;
+  padding: 10px 0px;
+}
+
+span.lock i {
+  position: absolute;
+  right: 0px;
+  font-size: 40px;
+  color: rgb(151, 151, 151);
+}
+
+#check-1:checked ~ .lock {
+  display: none;
+}
+.check-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.check-1 .text {
+  margin-left: 15px;
+}
+
+.check-lable input:checked ~ .lock {
+  display: none;
+}
+
+.check-lable input {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(207, 207, 207);
+  cursor: pointer;
+  visibility: hidden;
+  display: flex;
+}
+
+.check-lable {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.feature label {
+  font-size: 17px;
+  font-family: Montserrat;
+  font-weight: 600;
+  padding-left: 8px;
+  margin-bottom: 0px;
+}
+
+.feature p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.row.feature-border {
+  border-bottom: 1px solid rgb(229, 228, 228);
+  margin-bottom: 30px;
+}
+
+.col-lg-8.check-col {
+  padding-bottom: 20px;
+}
+
+.col-lg-12.button-feature {
+  padding-right: 75px;
+}
+
+span.HEADING {
+  font-size: 13px;
+  color: rgba(118, 116, 116, 0.59);
+  text-transform: capitalize;
+}
+
+.sec-4 {
+  padding-bottom: 60px;
+}
+
+.subscription {
+  background: rgb(243, 243, 243);
+  padding: 20px 20px 0px;
+}
+
+.sec-3 h1 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 35px;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.sub-method h6 {
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.sub-method {
+  padding: 20px 0px;
+}
+
+.sub-method h5 {
+  text-align: end;
+  font-size: 18px;
+  font-family: Montserrat;
+  cursor: pointer;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.sub-method p {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.sub-method label {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sub-method input {
+  width: 18px;
+  height: 18px;
+  border-radius: 60px;
+}
+
+.sub-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.sub-check label {
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 9px;
+}
+
+.sub-method span i {
+  color: rgb(0, 0, 120);
+  font-size: 35px;
+  padding-right: 10px;
+}
+
+.sub-method span {
+  font-size: 19px;
+  display: flex;
+  align-items: end;
+}
+
+.history table {
+  width: 100%;
+}
+
+tr.head-edit th {
+  font-size: 20px;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.38);
+  padding: 30px 0px 30px 20px;
+  background: rgb(243, 243, 243);
+}
+
+table.history-edit tr td {
+  font-size: 17px;
+  font-weight: 500;
+  border-bottom: 2px solid rgb(243, 243, 243);
+  padding: 20px 0px 20px 20px;
+  text-transform: uppercase;
+}
+
+tr {
+  border: 1px solid rgb(243, 243, 243);
+}
+
+.sec-4 h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 35px;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.profile.input-icon input:focus {
+  background: rgb(225, 222, 222);
+}
+.col-lg-8.my_subs_div_1 {
+  display: flex;
+  align-items: center;
+}
+
+.col-lg-4.my_subs_div_2 {
+  display: flex;
+  align-items: center;
+}
+.my_chk {
+  width: 60px;
+  height: 30px;
+  background: gray;
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  transition: 0.5s ease all;
+}
+
+.my_chk span {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+  border: 2px solid gray;
+  left: 0;
+}
+
+.check-lable input:checked ~ label .my_chk {
+  background: #45d145;
+}
+
+.check-lable input:checked ~ label .my_chk span {
+  left: 50%;
+  border-color: #45d145;
+}
+.my_chk {
+  width: 60px;
+  height: 30px;
+  background: gray;
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  transition: 0.5s ease all;
+}
+
+.my_chk span {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+  border: 2px solid gray;
+  left: 0;
+}
+
+.check-lable input:checked ~ label .my_chk {
+  background: #45d145;
+}
+
+.check-lable input:checked ~ label .my_chk span {
+  left: 50%;
+  border-color: #45d145;
+}
+
+.feature .check-lable input {
+  display: none;
+}
+
+.feature label {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.feature label .my_chk + div {
+  width: calc(100% - 65px);
+  margin-left: 5px;
+  font-size: 16px;
+  line-height: 1em;
+}
+
+.feature h6 {
+  font-size: 20px;
+}
+
+.feature {
+  padding: 0;
+}
+
+.feature p {
+  font-size: 14px;
+}
+
+.my_ac_feat_component .accounts-features {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (max-width: 1600px) {
+  .user-record h3 {
+    font-size: 28px;
+  }
+
+  .email-record h6 {
+    font-size: 21px;
+  }
+
+  .user-record img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cs-pro p {
+    font-size: 16px;
+  }
+
+  span.span-star {
+    font-size: 15px;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar li a {
+    font-size: 18px;
+  }
+
+  .free-book-label {
+    font-size: 42px;
+  }
+
+  .sec-3 h1 {
+    font-size: 32px;
+  }
+
+  .sub-method h6 {
+    font-size: 16px;
+  }
+
+  button.btn.us-active-btn {
+    font-size: 16px;
+    height: 50px;
+    width: 70%;
+  }
+
+  tr.head-edit th {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  table.history-edit tr td {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .profile h6 {
+    font-size: 16px;
+  }
+
+  .sec-2 h1 {
+    font-size: 32px;
+  }
+
+  .feature h6 {
+    font-size: 18px;
+  }
+
+  .my_chk {
+    width: 50px;
+    height: 25px;
+  }
+
+  .profile-button button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .user-record h3 {
+    font-size: 24px;
+  }
+
+  .email-record h6 {
+    font-size: 18px;
+  }
+
+  .email-record p {
+    font-size: 14px;
+  }
+
+  .user-record img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .cs-pro p {
+    font-size: 14px;
+  }
+
+  span.span-star {
+    font-size: 14px;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar li a {
+    font-size: 16px;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar {
+    justify-content: center;
+  }
+
+  .free-book-label {
+    font-size: 38px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .sub-method h6 {
+    font-size: 14px;
+  }
+
+  .sub-method p {
+    font-size: 14px;
+    margin: 0 auto;
+  }
+
+  button.btn.us-active-btn {
+    font-size: 14px;
+    height: 46px;
+    width: 68%;
+  }
+
+  .sub-method {
+    padding: 10px 0;
+  }
+
+  .row.feature-border {
+    margin-bottom: 20px;
+  }
+
+  .sec-4 h1 {
+    font-size: 30px;
+  }
+
+  tr.head-edit th {
+    font-size: 14px;
+  }
+
+  table.history-edit tr td {
+    font-size: 14px;
+  }
+
+  .sec-1 h1 {
+    font-size: 28px;
+  }
+
+  .profile h6 {
+    font-size: 14px;
+  }
+
+  .profile input {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .input-icon span {
+    height: 40px;
+  }
+
+  span.input-font i {
+    font-size: 18px;
+  }
+
+  .sec-2 h1 {
+    font-size: 28px;
+  }
+
+  .feature h6 {
+    font-size: 16px;
+  }
+
+  .feature p {
+    font-size: 13px;
+  }
+
+  .my_chk {
+    width: 40px;
+    height: 20px;
+  }
+
+  .profile-button button {
+    font-size: 14px;
+    height: 40px;
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .package-info-div img {
+    min-height: auto;
+    max-height: 170px;
+  }
+
+  .user-record h3 {
+    font-size: 20px;
+  }
+
+  .email-record h6 {
+    font-size: 16px;
+  }
+
+  .email-record p {
+    font-size: 12px;
+  }
+
+  .user-record img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cs-pro p {
+    font-size: 12px;
+  }
+
+  span.span-star {
+    font-size: 12px;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar li a {
+    font-size: 14px;
+    margin: 0 auto;
+  }
+
+  .free-book-label {
+    font-size: 34px;
+  }
+
+  .container {
+    width: 96%;
+  }
+
+  .sec-3 h1 {
+    font-size: 26px;
+  }
+
+  .sub-method h6 {
+    font-size: 12px;
+  }
+
+  .sub-method p {
+    font-size: 12px;
+  }
+
+  button.btn.us-active-btn {
+    width: 62%;
+    font-size: 12px;
+    height: 38px;
+  }
+
+  .sec-4 h1 {
+    font-size: 26px;
+  }
+
+  tr.head-edit th {
+    font-size: 12px;
+  }
+
+  table.history-edit tr td {
+    font-size: 12px;
+  }
+
+  .profile h6 {
+    font-size: 12px;
+  }
+
+  .profile input {
+    font-size: 12px;
+    height: 35px;
+  }
+
+  .input-icon span {
+    height: 35px;
+    font-size: 20px;
+  }
+
+  span.input-font i {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+
+  .sec-2 h1 {
+    font-size: 26px;
+  }
+
+  .sec-1 h1 {
+    font-size: 26px;
+  }
+
+  .feature h6 {
+    font-size: 14px;
+  }
+
+  .feature label .my_chk + div {
+    font-size: 14px;
+  }
+
+  .feature p {
+    font-size: 11px;
+    line-height: 1.6em;
+  }
+
+  .my_chk {
+    width: 30px;
+    height: 15px;
+  }
+
+  .profile-button button {
+    font-size: 12px;
+    width: 130px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .package-info-div img {
+    max-height: 122px;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar {
+    margin-bottom: 40px;
+  }
+
+  .profile-sec .col-lg-4 {
+    width: 50%;
+  }
+
+  .sec-1 {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .my_prof_div .free-book-section,
+  .my_prof_div .package-info-div {
+    display: none;
+  }
+  .header.my_profile_header .container .row {
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  .header.my_profile_header .container .row .col-lg-8 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .header.my_profile_header
+    .container
+    .row
+    .col-lg-4.mt-auto.text-right
+    .cs-pro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header.my_profile_header
+    .container
+    .row
+    .col-lg-4.mt-auto.text-right
+    .cs-pro
+    span.span-star {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+
+  .header.my_profile_header
+    .container
+    .row
+    .col-lg-4.mt-auto.text-right
+    .cs-pro
+    p {
+    font-size: 13px;
+    padding: 0;
+  }
+
+  .header.my_profile_header .user-record {
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: wrap;
+  }
+
+  .header.my_profile_header .user-record img {
+    width: 35%;
+    height: auto;
+    position: unset;
+    display: block;
+  }
+
+  .header.my_profile_header .user-record .user-edit {
+    padding: 0;
+    width: calc(65% - 20px);
+  }
+
+  .header.my_profile_header .user-record .user-edit h3 {
+    font-size: 20px;
+    line-height: 1em;
+    text-transform: capitalize;
+    margin-bottom: 0;
+  }
+
+  .header.my_profile_header .user-record .user-edit .email-record h6 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .header.my_profile_header .user-record .user-edit .email-record p {
+    margin: 0;
+    line-height: 1.4em;
+    font-size: 12px;
+    font-weight: 600;
+    color: #acabb7;
+  }
+
+  .header.my_profile_header .user-record .user-edit span {
+    text-transform: capitalize;
+    display: block;
+  }
+  ul.navbar-nav.ml-auto.header-bar.my_prof_nav {
+    justify-content: space-between;
+    flex-flow: unset;
+    padding: 10px 0;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar.my_prof_nav li.nav-item {
+    display: block;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar.my_prof_nav li.nav-item a {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    text-align: center;
+    position: relative;
+  }
+
+  ul.navbar-nav.ml-auto.header-bar.my_prof_nav li.nav-item a::after {
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+  }
+  .my_prof_div .row.row-425.spacing-adjust {
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+
+  .my_prof_div .row.row-425.spacing-adjust .og-books {
+    width: 47.333%;
+  }
+
+  .my_prof_div .row.row-425.spacing-adjust p.og-book-title {
+    display: block;
+    font-size: 10px;
+    line-height: 1.3em;
+  }
+
+  .my_prof_div .row.row-425.spacing-adjust .mp-book-chapters svg {
+    display: none;
+  }
+
+  .my_prof_div
+    .row.row-425.spacing-adjust
+    .mp-book-chapters
+    p.mp-book-chapter-number {
+    background: goldenrod;
+    font-size: 10px;
+    font-weight: 700;
+    color: black;
+    border-radius: 50px;
+    padding: 5px;
+  }
+  .bookmarks-chapters-div p {
+    background: goldenrod;
+    font-size: 10px;
+    font-weight: 700;
+    color: black;
+    border-radius: 50px;
+    padding: 5px;
+  }
+  .bookmarks-chapters-div {
+    border-radius: 25px;
+    height: 30px;
+    justify-content: center;
+    font-weight: 700;
+    display: flex;
+    margin: 0;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    align-items: center;
+    width: fit-content;
+    background-color: transparent;
+  }
+  .my_prof_div .sec-3 {
+    padding: 0;
+  }
+
+  .my_prof_div .sec-3 h1 {
+    font-size: 22px;
+    padding: 15px 0;
+    text-align: center;
+  }
+  .my_subs_div_1 .col-lg-8 ~ .col-lg-4 {
+    background-color: black !important;
+  }
+
+  .col-lg-8.my_subs_div_1 {
+    display: block;
+    padding: 0;
+    width: 70%;
+  }
+
+  .col-lg-4.my_subs_div_2 {
+    width: 30%;
+    padding: 0;
+  }
+
+  .col-lg-8.my_subs_div_1 .col-lg-4 {
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+
+  .col-lg-8.my_subs_div_1 .col-lg-8 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .col-lg-8.my_subs_div_1 .col-lg-4 .sub-method h6 {
+    font-size: 14px;
+    line-height: 1em;
+    margin: 0;
+  }
+
+  .col-lg-8.my_subs_div_1 .col-lg-8 .sub-method p {
+    font-size: 13px;
+    line-height: 1.2em;
+    margin: 0;
+  }
+
+  .feature-border .sub-method {
+    padding: 0;
+  }
+
+  .my_prof_div .subscription {
+    padding: 10px;
+  }
+
+  .my_subs_div_2 .col-lg-12 {
+    padding: 0;
+  }
+
+  .my_subs_div_2 .col-lg-12 .sub-method h5 {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .my_prof_div .row.feature-border {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  .feature-border .sub-method .sub-check label {
+    font-size: 12px;
+  }
+
+  .feature-border .sub-method .sub-check {
+    margin-top: 10px;
+  }
+
+  .feature-border .sub-method span {
+    font-size: 12px;
+    align-items: center;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .history-edit tr th,
+  table.history-edit tr td {
+    font-size: 14px;
+    padding: 10px 5px 10px 5px;
+    line-height: 1.2em;
+  }
+  .my_edit_component.sec-1 {
+    padding: 0;
+  }
+
+  .my_edit_component.sec-1 h1,
+  .my_ac_feat_component.sec-2 h1 {
+    font-size: 22px;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .my_edit_component.sec-1 .profile-edit {
+    padding: 20px 0;
+  }
+
+  .my_edit_component.sec-1 .profile-edit .col-lg-4 {
+    margin-bottom: 10px;
+  }
+
+  .my_edit_component.sec-1 .profile-edit input {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0px 10px 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .change_pass_component.sec-3 {
+    padding: 0;
+  }
+
+  .change_pass_component.sec-3 h1,
+  .change_pass_component.sec-3 .change-password {
+    padding: 20px 0;
+  }
+
+  .change_pass_component.sec-3 .change-password .col-lg-4 {
+    margin-bottom: 10px;
+  }
+
+  .change_pass_component.sec-3 .change-password input {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0px 10px 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .profile.input-icon {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  .input-icon span {
+    position: relative;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  span.input-font i {
+    margin: 0;
+  }
+
+  .profile-button {
+    text-align: center;
+  }
+
+  .profile-button button {
+    height: auto;
+    font-size: 16px;
+    width: auto;
+    padding: 10px 20px;
+  }
+  .my_ac_feat_component.sec-2 {
+    margin-top: 20px;
+  }
+  .col-lg-12.button-feature {
+    padding: 0;
+    padding-top: 20px;
+  }
+  .feature label .my_chk + div {
+    font-size: 14px;
+  }
+
+  .feature h6 {
+    font-size: 14px;
+  }
+
+  .feature p {
+    font-size: 12px;
+  }
+
+  .profile-sec .col-lg-4 {
+    width: 100%;
+  }
+}
+.enabletxt {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
