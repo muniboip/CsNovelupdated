@@ -1,6 +1,6 @@
 
 import "../Styles/clientStyles.css";
-import React, {  useState } from "react";
+import React  from "react";
 import CI from "./../Assets/Images/Categories Icon.svg";
 import * as actions from "../store/actions/actions";
 // import * as types from '../store/actions/actions'

@@ -116,9 +116,9 @@ function Footer({ booksReducer }) {
             <div className="col-lg-2 col-md-2 col-sm-3">
               <div className="links-container">
                 <p className="links-heading">popular</p>
-                {popular?.map((ele, idx) => {
+                {popular?.map((ele, idx) => 
                    (<FooterLinksMapper mode="sortBy" item={ele} key={idx} />)
-                })}
+                )}
               </div>
             </div>
 

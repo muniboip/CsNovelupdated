@@ -39,7 +39,7 @@ function FreeBookComp() {
               <span className="gradient-green-ball" />
               <span className="gradient-red-ball" />
               <div className="three-lines">
-                <img src={THREE_LINES} className="three-lines-image" alt="three-lines-image" />
+                <img src={THREE_LINES} className="three-lines-image" alt="three" />
               </div>
               <div className="free-book-image">
                 <div>
@@ -47,7 +47,7 @@ function FreeBookComp() {
                   <p className="free-book-heading">{freeBookOfWeek.heading}</p>
                   <p className="mp-cs-text">CS</p>
                 </div>
-                <img src={freeBookOfWeek.image} className="free-book-image" alt="free-book-image" />
+                <img src={freeBookOfWeek.image} className="free-book-image" alt="free" />
               </div>
 
               <div className="free-book-details">

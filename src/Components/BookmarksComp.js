@@ -1,14 +1,15 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import OngoingNovelsMapper from "./OngoingNovelsMapper";
 import { favoriteThisBook, getBookmarks } from "../store/actions/actions";
 
 function BookmarksComp({ booksReducer,authReducer, title}) {
+  const key = false
 useEffect(()=>{
   getBookmarks(authReducer.accessToken)
-},[]) 
+},[key]) 
 
 
 

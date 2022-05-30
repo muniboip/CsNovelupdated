@@ -33,7 +33,7 @@ function CompletedNovels({
         <img
           src={`${item?.Cover?.url}`}
           className="completed-book-image"
-          alt="completed-book-image"
+          alt="completed"
         />
         {/* <p className="mp-cs-text">CS</p>
         <p className="completed-book-status">{item.status} </p>

@@ -28,9 +28,10 @@ function OngoingNovelsMapper({
     getBookmarks(authReducer?.accessToken);
   };
   const [state, setstate] = useState(true);
+  const key = true
   useEffect(() => {
     setdata(item);
-  },[]);
+  },[key]);
   useEffect(() => {
     setdata(
       booksReducer?.books?.filter((e) => {

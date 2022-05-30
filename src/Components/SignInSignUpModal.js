@@ -241,7 +241,7 @@ function SignInSignUpModal({
             <div className="loading-signin">SIGINING IN</div>
           )}
         </form>
-        {mode === "login" && (
+        {mode === "login" ? (
           <div className="forget">
             <a >
               <span className="forgot-pass">FORGOT PASSWORD?</span>
@@ -257,7 +257,7 @@ function SignInSignUpModal({
               <span className="tap-here">TAP HERE</span>
             </a>
           </div>
-        )}
+        ):null}
 
         <hr className="dont-have-an-acc" />
         {mode === "login" && (

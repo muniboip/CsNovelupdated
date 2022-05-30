@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GoogleLogin from "react-google-login";
 import Modal from "react-modal";
 import Logo from "../Assets/Images/csnovels-logo.svg";
