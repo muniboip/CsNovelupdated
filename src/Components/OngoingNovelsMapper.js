@@ -13,7 +13,7 @@ function OngoingNovelsMapper({
   getBook,
   favoriteBookHandler,
   booksReducer,
-  isLoading,
+  
   authReducer,
   deleteBookMark,
   getBookmarks,

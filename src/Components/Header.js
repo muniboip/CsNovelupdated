@@ -10,7 +10,6 @@ import { connect, useSelector } from "react-redux";
 import SignInSignUpModal from "./SignInSignUpModal";
 import AuthModal from "./AuthModal";
 import ForgetPasswordModal from "./ForgetPasswordModal";
-
 import profile from "../Assets/Images/dp-placeholder.jpg"
 function Header({ authReducer }) {
   const [text, setText] = useState("");

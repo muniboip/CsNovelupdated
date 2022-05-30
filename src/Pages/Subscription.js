@@ -192,7 +192,7 @@ function Subscription({ authReducer }) {
       <div className="container">
         <div className="subcription">
           <h1>Subscription</h1>
-          {(authReducer.userData?.package && !(authReducer.userData?.package?.amount == 15 || authReducer.userData?.package?.amount == 9)) ? (
+          {(authReducer.userData?.package && !(authReducer.userData?.package?.amount === 15 || authReducer.userData?.package?.amount === 9)) ? (
             <p>
               You have to cancel custom subscription first than update package
             </p>
@@ -247,7 +247,7 @@ function Subscription({ authReducer }) {
                   <p>charged monthly OR one time payment for 30 day access</p>
                 </div>
                 <div className="free-cs upgrade-cs">
-                  {/* {authReducer.userData?.package?.amount == 15 || authReducer.userData?.package?.amount == 9 || authReducer.userData?.package === null ? ( */}
+                  {/* {authReducer.userData?.package?.amount === 15 || authReducer.userData?.package?.amount === 9 || authReducer.userData?.package === null ? ( */}
                     <button
                       className="btn3"
                       onClick={() => {
@@ -283,8 +283,8 @@ function Subscription({ authReducer }) {
                   <p>charged monthly OR one time payment for 30 day access</p>
                 </div>
                 <div className="free-cs ">
-                  {authReducer.userData?.package?.amount == 15 ||
-                  authReducer.userData?.package?.amount == 9 ? (
+                  {authReducer.userData?.package?.amount === 15 ||
+                  authReducer.userData?.package?.amount === 9 ? (
                     <button className="btn1" style={{ cursor: "pointer" }}>
                       {" "}
                       SUBSCRIBED
@@ -307,8 +307,8 @@ function Subscription({ authReducer }) {
                   <p>charged monthly OR one time payment for 30 day access</p>
                 </div>
                 <div className="free-cs ">
-                  {authReducer.userData?.package?.amount == 15 ||
-                  authReducer.userData?.package?.amount == 9 ? (
+                  {authReducer.userData?.package?.amount === 15 ||
+                  authReducer.userData?.package?.amount === 9 ? (
                     <button className="btn1" style={{ cursor: "pointer" }}>
                       {" "}
                       SUBSCRIBED
@@ -409,7 +409,7 @@ function Subscription({ authReducer }) {
                     onClick={() => {
                       setupdateamount(!updateamount);
 
-                      if (modalcontent.product == "Custom Product") {
+                      if (modalcontent.product === "Custom Product") {
                         setmodalcontent(content);
                       } else {
                         setmodalcontent({ product: "Custom Product" });

@@ -2004,8 +2004,8 @@
         if (_.options.rtl === true) {
             position = -position;
         }
-        x = _.positionProp == 'left' ? Math.ceil(position) + 'px' : '0px';
-        y = _.positionProp == 'top' ? Math.ceil(position) + 'px' : '0px';
+        x = _.positionProp === 'left' ? Math.ceil(position) + 'px' : '0px';
+        y = _.positionProp === 'top' ? Math.ceil(position) + 'px' : '0px';
 
         positionProps[_.positionProp] = position;
 
@@ -2365,7 +2365,7 @@
                 remainder = _.slideCount % _.options.slidesToShow;
                 indexOffset = _.options.infinite === true ? _.options.slidesToShow + index : index;
 
-                if (_.options.slidesToShow == _.options.slidesToScroll && (_.slideCount - index) < _.options.slidesToShow) {
+                if (_.options.slidesToShow === _.options.slidesToScroll && (_.slideCount - index) < _.options.slidesToShow) {
 
                     allSlides
                         .slice(indexOffset - (_.options.slidesToShow - remainder), indexOffset + remainder)
@@ -2999,7 +2999,7 @@
             i,
             ret;
         for (i = 0; i < l; i++) {
-            if (typeof opt == 'object' || typeof opt == 'undefined')
+            if (typeof opt === 'object' || typeof opt === 'undefined')
                 _[i].slick = new Slick(_[i], opt);
             else
                 ret = _[i].slick[opt].apply(_[i].slick, args);

@@ -5,7 +5,7 @@ import StarRatings from "react-star-ratings";
 import { imageUrl } from "../config";
 import * as actions from "../store/actions/actions";
 
-function Top10Mapper({ authReducer, item, index, onClick, getBook }) {
+function Top10Mapper({  item, index,  getBook }) {
   const navigate = useNavigate();
   
   return (

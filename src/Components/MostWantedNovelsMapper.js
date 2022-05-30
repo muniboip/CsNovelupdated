@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 function MostWantedNovelsMapper({
   item,
   favoriteBookHandler,
-  isLoading,
+  
   authReducer,
   getBook,
 }) {

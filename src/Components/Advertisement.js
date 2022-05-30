@@ -1,14 +1,8 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 
 function AddComponent (){
-  useEffect( ()=> {
-    // setTimeout(function(){ (window.adsbygoogle = window.adsbygoogle || []).push({}); }, 2000);
-    
-    // window.adsbygoogle = window.adsbygoogle || [];
-    // window.adsbygoogle.push({});
-  })
 
 
     return (

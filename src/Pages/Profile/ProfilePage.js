@@ -290,7 +290,7 @@ function ProfilePage({
           </li>
         </ul>
         <div className="my_prof_div">
-          {headerSelection == 1 && (
+          {headerSelection === 1 && (
             <>
               <FreeBookComp />
               <div className="package-info-div">
@@ -319,7 +319,7 @@ function ProfilePage({
             </>
           )}
 
-          {headerSelection == 2 &&
+          {headerSelection === 2 &&
             (favoriteBooks?.length > 0 ? (
               <FavoritesComp
                 books={favoriteBooks}
@@ -331,11 +331,11 @@ function ProfilePage({
               </div>
             ))}
 
-          {headerSelection == 3 && <BookmarksComp />}
+          {headerSelection === 3 && <BookmarksComp />}
 
-          {headerSelection == 4 && <BillingComponent />}
+          {headerSelection === 4 && <BillingComponent />}
 
-          {headerSelection == 5 && (
+          {headerSelection === 5 && (
             <>
               <div className="my_edit_component sec-1">
                 <h1>Edit Profile</h1>
@@ -444,7 +444,7 @@ function ProfilePage({
                     </div>
                     <div className="col-lg-8">
                       <div className="feature">
-                        {authReducer.userData.package.product.name == "CS+" ||
+                        {authReducer.userData.package.product.name === "CS+" ||
                         authReducer.userData.package.product.name ==
                           "CS Pro" ? (
                           <>
@@ -512,7 +512,7 @@ function ProfilePage({
 
                     <div className="col-lg-8">
                       <div className="feature">
-                        {authReducer.userData.package.product.name == "CS+" ||
+                        {authReducer.userData.package.product.name === "CS+" ||
                         authReducer.userData.package.product.name ==
                           "CS Pro" ? (
                           <>
@@ -579,7 +579,7 @@ function ProfilePage({
 
                     <div className="col-lg-8">
                       <div className="feature">
-                        {authReducer.userData.package.product.name == "CS+" ||
+                        {authReducer.userData.package.product.name === "CS+" ||
                         authReducer.userData.package.product.name ==
                           "CS Pro" ? (
                           <>

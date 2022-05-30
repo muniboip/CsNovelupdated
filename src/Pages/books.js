@@ -298,7 +298,7 @@ const _onPressCommentSend = () => {
                           return;
                         } else if (
                           booksReducer.book.comments.filter((item) => {
-                            return item.userId._id == authReducer.userData._id;
+                            return item.userId._id === authReducer.userData._id;
                           }).length > 0
                         ) {
                           toast.info("Already Reviewed!");

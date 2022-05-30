@@ -90,8 +90,8 @@ function ReadBookPage({
       setChaptercontent([booksReducer?.chapterContent]);
       setidIsSelected(false);
     } else {
-      // console.log(booksReducer.chaptersTitles.filter(item => {return item.name == booksReducer.chapterContent[0].content})[0]);
-      // console.log(booksReducer.chaptersTitles.indexOf(booksReducer.chaptersTitles.filter(item => {return item.name == booksReducer.chapterContent[0].content})[0]));
+      // console.log(booksReducer.chaptersTitles.filter(item => {return item.name === booksReducer.chapterContent[0].content})[0]);
+      // console.log(booksReducer.chaptersTitles.indexOf(booksReducer.chaptersTitles.filter(item => {return item.name === booksReducer.chapterContent[0].content})[0]));
       const arr = [...chaptercontent];
       const samechapter = arr.indexOf(booksReducer.chapterContent)
       if(samechapter!=-1){
@@ -176,25 +176,25 @@ function ReadBookPage({
   };
 
   if (
-    (authReducer?.userData?.package?.product?.name == "CS+" ||
-      authReducer?.userData?.package?.product?.name == "CS Pro") &&
-    authReducer?.userData?.feature?.readingStyle == true
+    (authReducer?.userData?.package?.product?.name === "CS+" ||
+      authReducer?.userData?.package?.product?.name === "CS Pro") &&
+    authReducer?.userData?.feature?.readingStyle === true
   ) {
     document.onscroll = function () {
       if (
         window.innerHeight + document.documentElement.scrollTop ==
         document.documentElement.offsetHeight
       ) {
-        if (window.location.pathname.split("/")[1] == "ReadBookPage") {
-          if (authReducer?.userData?.feature?.ads == false) {
+        if (window.location.pathname.split("/")[1] === "ReadBookPage") {
+          if (authReducer?.userData?.feature?.ads === false) {
             setpopup(true);
           }
 
           scrollToEnd();
         }
-      } else if (document.documentElement.scrollTop == 0) {
-        if (window.location.pathname.split("/")[1] == "ReadBookPage") {
-          if (authReducer?.userData?.feature?.ads == false) {
+      } else if (document.documentElement.scrollTop === 0) {
+        if (window.location.pathname.split("/")[1] === "ReadBookPage") {
+          if (authReducer?.userData?.feature?.ads === false) {
             setpopup(true);
           }
 
@@ -211,7 +211,7 @@ function ReadBookPage({
   useEffect(() => {
     setCurrchapter(
       booksReducer.chaptersTitles.filter(
-        (e) => e._id == window.location.pathname.split("/")[3]
+        (e) => e._id === window.location.pathname.split("/")[3]
       )[0]
     );
   }, [window.location.pathname]);
@@ -243,7 +243,7 @@ function ReadBookPage({
   };
 
   const _onPressApplyFont = (fontType) => {
-    if (fontType == 1) {
+    if (fontType === 1) {
       $("body  p").css("font-family", "Nunito Sans, sans-serif");
     } else {
       $("body  p").css("font-family", "Montserrat");
@@ -305,7 +305,7 @@ function ReadBookPage({
 
     setdata(
       booksReducer.bookmarks.filter(
-        (e) => e.chapter._id == window.location.pathname.split("/")[3]
+        (e) => e.chapter._id === window.location.pathname.split("/")[3]
       )
     );
   }, [window.location.pathname]);
@@ -313,7 +313,7 @@ function ReadBookPage({
   useEffect(() => {
     setdata(
       booksReducer.bookmarks.filter(
-        (e) => e.chapter._id == window.location.pathname.split("/")[3]
+        (e) => e.chapter._id === window.location.pathname.split("/")[3]
       )
     );
   }, [booksReducer?.bookmarks]);
@@ -356,7 +356,7 @@ function ReadBookPage({
             <>
               {`${books?.book[0]?.content} : Title`} {"   "}
               <span onClick={() => bookMarkthebook()}>
-                {data.length == 0 ? (
+                {data.length === 0 ? (
                   <img src={unfilledBookmark} style={{ height: "30px" }} />
                 ) : (
                   <img src={filledBookmark} style={{ height: "30px" }} />
@@ -460,7 +460,7 @@ function ReadBookPage({
             </div>
 
             {/* Book Content Paragraphs  */}
-            {Currchapter?.permissions?.length == 0 ||
+            {Currchapter?.permissions?.length === 0 ||
             Currchapter?.permissions?.includes(
               authReducer.userData?.package?.product?.name
             ) ? (
@@ -504,13 +504,13 @@ function ReadBookPage({
                   </InfiniteScroll>
                 </div>
                 <div style={{ "margin-left": "85%", "margin-top": "10px" }}>
-                  {authReducer?.userData?.feature?.readingStyle == false ? (
+                  {authReducer?.userData?.feature?.readingStyle === false ? (
                     <>
                       <FontAwesomeIcon
                         icon={faArrowAltCircleLeft}
                         onClick={() => {
                           setidIsSelected(true);
-                          if (authReducer?.userData?.feature?.ads == false) {
+                          if (authReducer?.userData?.feature?.ads === false) {
                             setpopup(true);
                           }
                           scrollToTop();
@@ -521,7 +521,7 @@ function ReadBookPage({
                         icon={faArrowAltCircleRight}
                         onClick={() => {
                           setidIsSelected(true);
-                          if (authReducer?.userData?.feature?.ads == false) {
+                          if (authReducer?.userData?.feature?.ads === false) {
                             setpopup(true);
                           }
 
@@ -696,7 +696,7 @@ function ReadBookPage({
                     <li>
                       <a
                         className={
-                          selectedRange?.index == ele?.index && "blue-line"
+                          selectedRange?.index === ele?.index && "blue-line"
                         }
                         href="#"
                         onClick={(e) => {

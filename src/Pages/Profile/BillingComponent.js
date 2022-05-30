@@ -322,7 +322,7 @@ const BillingComponent = ({ authReducer }) => {
         </Modal.Header>
         <Modal.Body>
           <div className="row col-row">
-            {/* <p>{packages.interval == "monthly" ? "You cannot subscribe any package until the time of previous subscription in ended":"abc"}</p> */}
+            {/* <p>{packages.interval === "monthly" ? "You cannot subscribe any package until the time of previous subscription in ended":"abc"}</p> */}
           </div>
           <div className="row col-row">
             <div className="col-lg-3 px-3"></div>
