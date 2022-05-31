@@ -18,6 +18,7 @@ import StripeCheckout from "react-stripe-checkout";
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
 import edit_modify_icon from "../Assets/Images/edit_modify_icon.png";
+import Loader from "react-loader-spinner";
 
 const override = css`
   display: block;
@@ -30,14 +31,15 @@ function Subscription({ authReducer }) {
   const [packages, setpackages] = useState([]);
   const [modalcontent, setmodalcontent] = useState({});
   const [content, setcontent] = useState({});
-
-
+  const [isLoading, setisLoading] = useState(false);
+  // email.defaultValue = authReducer.userData.email
+  // email.disabled=true
   const [amount, setAmount] = useState("0");
   const [interval, setinterval] = useState("one-time");
   const [checked, setchecked] = useState(false);
   const [product, setproduct] = useState("");
   const [load, setload] = useState(true);
-  
+
   let [loading] = useState(true);
   let [color] = useState("#ffffff");
   const [updateamount, setupdateamount] = useState(false);
@@ -109,16 +111,15 @@ function Subscription({ authReducer }) {
       setinterval("monthly");
     }
   }, [checked]);
-  
 
   async function handleToken(token) {
-    
+    setisLoading(true);
+
     var response;
     if (
       !authReducer.userData?.package &&
       modalcontent.product !== "Custom Product"
     ) {
-      
       response = await Presubscription(
         token.id,
         interval,
@@ -126,7 +127,6 @@ function Subscription({ authReducer }) {
         authReducer.accessToken
       );
     } else if (modalcontent.product !== "Custom Product") {
-      
       response = await Updatesubscription(
         token.id,
         interval,
@@ -137,7 +137,6 @@ function Subscription({ authReducer }) {
       !authReducer.userData?.package &&
       modalcontent.product === "Custom Product"
     ) {
-      
       response = await customSubscription(
         token.id,
         interval,
@@ -148,8 +147,6 @@ function Subscription({ authReducer }) {
       authReducer.userData?.package &&
       modalcontent.product === "Custom Product"
     ) {
-      
-      
       response = await updatecustomSubscription(
         token.id,
         interval,
@@ -157,7 +154,6 @@ function Subscription({ authReducer }) {
         authReducer.accessToken
       );
     } else if (modalcontent.product === "Custom Product") {
-      
       response = await updatecustomSubscription(
         token.id,
         interval,
@@ -174,9 +170,13 @@ function Subscription({ authReducer }) {
         payload: response?.data.data,
       });
       closeModal();
+      setisLoading(false);
+
       toast.success(response.data.msg);
     } else {
       closeModal();
+      setisLoading(false);
+
       toast.error(response.data.msg);
     }
     <ClipLoader color={color} loading={loading} css={override} size={150} />;
@@ -185,21 +185,24 @@ function Subscription({ authReducer }) {
   }
   const date = new Date();
 
-  
   return (
     <>
       <Header />
       <div className="container">
         <div className="subcription">
           <h1>Subscription</h1>
-          {(authReducer.userData?.package && !(authReducer.userData?.package?.amount === 15 || authReducer.userData?.package?.amount === 9)) ? (
+          {authReducer.userData?.package &&
+          !(
+            authReducer.userData?.package?.amount === 15 ||
+            authReducer.userData?.package?.amount === 9
+          ) ? (
             <p>
               You have to cancel custom subscription first than update package
             </p>
           ) : null}
         </div>
         {packages.map((item, index) => {
-          if (item.free) {  
+          if (item.free) {
             return (
               <div className="sign-up">
                 <div className="free">free</div>
@@ -218,7 +221,7 @@ function Subscription({ authReducer }) {
                     onClick={() => {
                       setload(!load);
                       location.state.signup = false;
-                      getPackages()
+                      getPackages();
                       navigate("/");
                     }}
                   >
@@ -228,7 +231,10 @@ function Subscription({ authReducer }) {
                 </div>
               </div>
             );
-          } else if ((!item.free && authReducer.userData?.package === null )|| (parseInt(authReducer.userData?.package?.amount) !== item.amount)) {
+          } else if (
+            (!item.free && authReducer.userData?.package === null) ||
+            parseInt(authReducer.userData?.package?.amount) !== item.amount
+          ) {
             return (
               <div className="sign-up upgrade">
                 <div className="free dollar">
@@ -248,21 +254,21 @@ function Subscription({ authReducer }) {
                 </div>
                 <div className="free-cs upgrade-cs">
                   {/* {authReducer.userData?.package?.amount === 15 || authReducer.userData?.package?.amount === 9 || authReducer.userData?.package === null ? ( */}
-                    <button
-                      className="btn3"
-                      onClick={() => {
-                        setmodalcontent(item);
-                        setcontent(item);
-                        openModal();
-                      }}
-                    >
-                      {authReducer.userData?.package
-                        ? item.amount > authReducer.userData?.package?.amount
-                          ? "UPGRADE"
-                          : "DOWNGRADE"
-                        : "SUBSCRIBE"}
-                    </button>
-                  
+                  <button
+                    className="btn3"
+                    onClick={() => {
+                      setmodalcontent(item);
+                      setcontent(item);
+                      openModal();
+                    }}
+                  >
+                    {authReducer.userData?.package
+                      ? item.amount > authReducer.userData?.package?.amount
+                        ? "UPGRADE"
+                        : "DOWNGRADE"
+                      : "SUBSCRIBE"}
+                  </button>
+
                   <h1>{item.name}</h1>
                 </div>
               </div>
@@ -402,47 +408,63 @@ function Subscription({ authReducer }) {
           </Modal.Header>
 
           <Modal.Body>
-            <div className="row">
-              <div className="form-group us-form">
-                <div className="modal-con">
-                  <div
-                    onClick={() => {
-                      setupdateamount(!updateamount);
-
-                      if (modalcontent.product === "Custom Product") {
-                        setmodalcontent(content);
-                      } else {
-                        setmodalcontent({ product: "Custom Product" });
-                      }
-                    }}
-                    className="edittag"
-                  >
-                    <img src={edit_modify_icon} className="editlogo" alt="edit" />I want to
-                    donate more
-                  </div>
-                  <div className="amountcontainer">
-                    {updateamount ? (
-                      <input
-                        type="text"
-                        value={amount}
-                        className="inputamount"
-                        onChange={(e) => {
-                          setAmount(e.target.value);
-                        }}
-                      />
-                    ) : (
-                      <h1>${modalcontent.amount}</h1>
-                    )}
-
-                    <span>/m</span>
-                    <hr></hr>
-                    <p style={{ marginTop: "-10px" }}>
-                      Billing cycle will be on the {date.getDate()} of each
-                      month
-                    </p>
-                  </div>
+            {isLoading ? (
+              <div className="row">
+                <div className="loader">
+                  <Loader
+                    type="TailSpin"
+                    color="darkgrey"
+                    height={100}
+                    width={100}
+                  />
                 </div>
-                {/* ) : (
+              </div>
+            ) : (
+              <div className="row">
+                <div className="form-group us-form">
+                  <div className="modal-con">
+                    <div
+                      onClick={() => {
+                        setupdateamount(!updateamount);
+
+                        if (modalcontent.product === "Custom Product") {
+                          setmodalcontent(content);
+                        } else {
+                          setmodalcontent({ product: "Custom Product" });
+                        }
+                      }}
+                      className="edittag"
+                    >
+                      <img
+                        src={edit_modify_icon}
+                        className="editlogo"
+                        alt="edit"
+                      />
+                      I want to donate more
+                    </div>
+                    <div className="amountcontainer">
+                      {updateamount ? (
+                        <input
+                          type="text"
+                          value={amount}
+                          className="inputamount"
+                          onChange={(e) => {
+                            setAmount(e.target.value);
+                          }}
+                        />
+                      ) : (
+                        <h1>${modalcontent.amount}</h1>
+                      )}
+
+                      <span>/m</span>
+                      <hr></hr>
+                      <p style={{ marginTop: "-10px" }}>
+                        Billing cycle will be on the {date.getDate()} of each
+                        month
+                      </p>
+                    </div>
+                  </div>
+                  {/* ) : (
                   <>
                     <input
                       type="number"
@@ -459,8 +481,9 @@ function Subscription({ authReducer }) {
                     </span>
                   </>
                 )}{" "} */}
+                </div>
               </div>
-            </div>
+            )}
             {/* {!modalcontent.amount ? (
               <>
                 <div className="row col-row">
@@ -537,11 +560,13 @@ function Subscription({ authReducer }) {
                 </div>
               </>
             ) : null} */}
-            <div className="row">
-              <div className="col-md-12 lg-12 form-check-inline">
-                <h1>{modalcontent.name ? modalcontent.name : "CUSTOM"}</h1>
+            {!isLoading ? (
+              <>
+                <div className="row">
+                  <div className="col-md-12 lg-12 form-check-inline">
+                    <h1>{modalcontent.name ? modalcontent.name : "CUSTOM"}</h1>
 
-                {/* <label className="form-check-label">
+                    {/* <label className="form-check-label">
                   <input
                     type="checkbox"
                     style={{
@@ -553,38 +578,38 @@ function Subscription({ authReducer }) {
                   ></input>{" "}
                   Subscribe For Monthly
                 </label> */}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12 lg-12 checkbox-subscribe">
-                <div className="check-lable">
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => setchecked(!checked)}
-                    id="check-1"
-                  />
-                  <span className="lock">
-                    <i className="fas fa-lock-alt"></i>
-                  </span>
-                  <label for="check-1" className="check-1">
-                    <div
-                      className="my_chk"
-                      onChange={() => setchecked(!checked)}
-                    >
-                      <span></span>
-                    </div>
-                    <div className="text">Subscribe For Monthly</div>
-                  </label>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="row">
-              {/* <StripeCheckout
+                <div className="row">
+                  <div className="col-md-12 lg-12 checkbox-subscribe">
+                    <div className="check-lable">
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => setchecked(!checked)}
+                        id="check-1"
+                      />
+                      <span className="lock">
+                        <i className="fas fa-lock-alt"></i>
+                      </span>
+                      <label for="check-1" className="check-1">
+                        <div
+                          className="my_chk"
+                          onChange={() => setchecked(!checked)}
+                        >
+                          <span></span>
+                        </div>
+                        <div className="text">Subscribe For Monthly</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  {/* <StripeCheckout
     stripeKey = 'pk_test_51K7J3zEIGUZHqg4AQXRkFcz3FkVbBOa5MxjLqxY5z3EV5QpgJvDPmP285BvNt82FupjcBc8ZranqwU9rafxLKJTR009XtKs28i'
     token={handletoken}
     > */}
-              {/* <button
+                  {/* <button
                 type="button"
                 className="btn us-active-btn last-btn"
                 onClick={() => {
@@ -593,29 +618,36 @@ function Subscription({ authReducer }) {
               >
                 Continue
               </button> */}
-              {isSubscribe ? (
-                <StripeCheckout
-                  stripeKey="pk_test_51K7J3zEIGUZHqg4AQXRkFcz3FkVbBOa5MxjLqxY5z3EV5QpgJvDPmP285BvNt82FupjcBc8ZranqwU9rafxLKJTR009XtKs28i"
-                  token={handleToken}
-                  label={"CONTINUE"}
-                  className="token"
-                  billingAddress={true}
-                />
-              ) : null}
-              <p className="submittext">
-                Can cancel anytime in your profile {">"} Billing dashboard
-              </p>
-              {/* </StripeCheckout> */}
-            </div>
+                  {isSubscribe ? (
+                    <StripeCheckout
+                      stripeKey="pk_test_51K7J3zEIGUZHqg4AQXRkFcz3FkVbBOa5MxjLqxY5z3EV5QpgJvDPmP285BvNt82FupjcBc8ZranqwU9rafxLKJTR009XtKs28i"
+                      token={handleToken}
+                      label={"CONTINUE"}
+                      className="token"
+                      billingAddress={true}
+                      email={authReducer.userData.email}
+                      name={authReducer.userData.name}
+                    />
+                  ) : null}
+                  <p className="submittext">
+                    Can cancel anytime in your profile {">"} Billing dashboard
+                  </p>
+                  {/* </StripeCheckout> */}
+                </div>
+              </>
+            ) : null}
           </Modal.Body>
-          <Modal.Footer>
-            <p className="modal-footer-text">
-              By clicking Continue, I hereby agree that I have read and I agree
-              and consent to the <Link to="/UserAgreement">User Agreement</Link>
-              , its policies, the <Link to="/RefundPolicy">refund policy</Link>{" "}
-              and the <Link to="/PrivacyPolicy">Provacy Policy</Link>
-            </p>
-          </Modal.Footer>
+          {!isLoading ? (
+            <Modal.Footer>
+              <p className="modal-footer-text">
+                By clicking Continue, I hereby agree that I have read and I
+                agree and consent to the{" "}
+                <Link to="/UserAgreement">User Agreement</Link>, its policies,
+                the <Link to="/RefundPolicy">refund policy</Link> and the{" "}
+                <Link to="/PrivacyPolicy">Provacy Policy</Link>
+              </p>
+            </Modal.Footer>
+          ) : null}
         </Modal>
       </div>
     </>

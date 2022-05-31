@@ -1,9 +1,10 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { connect } from "react-redux";
 import OngoingNovelsMapper from "./OngoingNovelsMapper";
 import { favoriteThisBook, getBookmarks } from "../store/actions/actions";
+import { useSearchParams } from "react-router-dom";
 
 function BookmarksComp({ booksReducer,authReducer, title}) {
   const key = false
@@ -21,8 +22,12 @@ const favoriteBookHandler = (_id) => {
 
   favoriteThisBook(data, authReducer.accessToken, "favoritedBooks")
 };
-
-  const bookmarks = booksReducer.bookmarks;
+const [bookmarks,setbookmarks]=useState(booksReducer.bookmarks)
+useEffect(() => {
+  console.log("///");
+  setbookmarks(booksReducer.bookmarks)
+},[booksReducer.bookmarks])
+  
 
 //   {
 //     Cover:{url:item.book.Cover.url},
@@ -30,6 +35,7 @@ const favoriteBookHandler = (_id) => {
 //     Title:item.book.Title,
 //     chapter:item.chapter
 // }
+console.log(bookmarks);
   return (
     <div className="section-div ongoing_novel">
       <div className="section-heading-div">

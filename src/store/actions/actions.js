@@ -8,6 +8,9 @@ export const userLogin = (data, loginSuccess) => async (dispatch) => {
     const response = await axios.post(`${apiUrl}/users/login`, data);
 
     if (response?.data?.success) {
+      
+      getAllBooks(response?.data?.user?._id,response?.data?.user?.token)
+      
       if (response.data.user?.bookmark) {
         dispatch({
           type: types.GET_BOOKMARKS,
@@ -270,13 +273,6 @@ export const userSignUp = (data, loginSuccess) => async (dispatch) => {
   }
 };
 
-export const logout = () => (dispatch) => {
-  try {
-    dispatch({
-      type: types.LOGOUT_REQUEST,
-    });
-  } catch (err) {}
-};
 
 export const lib_book = (books) => async (dispatch) => {
   dispatch({
@@ -298,13 +294,23 @@ export const getAllBooks = (id, token) => async (dispatch) => {
     // const URL = `${apiUrl}/book/getAllBooks?&userId=${id}&limit=20`;
     const response = await axios.get(`${apiUrl}/book/gets?id=${id}`, header);
     // const response = await axios.get(URL, header);
-
+console.log(response);
     if (response.data.success) {
       dispatch({
         type: types.GET_ALL_BOOKS,
         payload: response?.data?.data,
       });
     }
+  } catch (err) {}
+};
+
+export const logout = () => (dispatch) => {
+  try {
+    console.log("=========")
+    getAllBooks(undefined,undefined)
+    dispatch({
+      type: types.LOGOUT_REQUEST,
+    });
   } catch (err) {}
 };
 
@@ -632,7 +638,7 @@ export const getBookmarks = (token) => async (dispatch) => {
   } catch (err) {}
 };
 
-export const deleteBookMark = async (id, token) => {
+export const deleteBookMark = (id, token)  => async (dispatch) => {
   const URL = `${apiUrl}/bookmark/delete/${id}`;
 
   const authHeader = {
@@ -645,6 +651,7 @@ export const deleteBookMark = async (id, token) => {
   try {
     const response = await axios.delete(URL, authHeader);
     if (response?.data?.success) {
+      
       toast.success(response?.data?.msg);
     }
   } catch (err) {}

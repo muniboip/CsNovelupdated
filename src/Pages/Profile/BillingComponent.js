@@ -32,13 +32,7 @@ const BillingComponent = ({ authReducer }) => {
 
     const data = await getpackage();
 
-    data.map((item) => {
-      if (item?._id === authReducer?.userData?.package?.product?._id) {
-        setpackages(item);
-        Object.assign(packages, authReducer?.userData?.package);
-      }
-    });
-
+   
     sethistor(await getpackagehistory(authReducer.accessToken));
   }, []);
 
@@ -129,7 +123,7 @@ const BillingComponent = ({ authReducer }) => {
                     <div className="sub-method">
                       <p>
                         {" "}
-                        {packages?.name} , ${authReducer?.userData?.package?.amount} per month
+                        {authReducer?.userData?.package?.product?.name} , ${authReducer?.userData?.package?.amount} per month
                       </p>
                     </div>
                   </div>

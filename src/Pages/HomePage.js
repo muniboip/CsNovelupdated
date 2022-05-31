@@ -167,6 +167,8 @@ const HomePage = ({
   }, []);
 
   useEffect(() => {
+    console.log("Books")
+    console.log(booksReducer?.books);
     let mostPopularNovels = booksReducer?.books?.filter(
       (ele) => ele?.isPopular
     );
@@ -193,8 +195,8 @@ const HomePage = ({
     setRecent(recent5Arrived);
     setOngoing(ongoingNovels);
     setTop10(top10Books);
-  }, [booksReducer.books, booksReducer.favoritedBooks]);
-
+  }, [booksReducer.books, booksReducer.favoritedBooks,authReducer.userData]);
+useEffect(()=>{},[mostPopular,ongoing,completed,recent,top10])
   return (
     <>
       <Header />

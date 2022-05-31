@@ -34,6 +34,8 @@ function ProfilePage({
   const [headerSelection, setHeaderSelection] = useState(
     window.location.href.split("/#")[1]
   );
+  console.log(headerSelection);
+
   const [isLoading, setIsLoading] = useState(false);
   const accessToken = authReducer?.accessToken;
   const [favoriteBooks, setFavoriteBooks] = useState([
@@ -177,7 +179,7 @@ function ProfilePage({
           <div className="row">
             <div className="col-lg-8">
               <div className="user-record">
-                <img
+                {/* <img
                   src={
                     DISPLAY_USER_IMAGE
                       ? `${authReducer?.userData?.profilePic?.url}`
@@ -185,7 +187,16 @@ function ProfilePage({
                   }
                   alt="user-image"
                   className="prof-img"
-                />
+                /> */}
+                 <div
+            className="user-acc-circle-dropdown"
+            style={{width:"120px", height: "120px"}}
+
+          >
+            <p className="user-acc-label-dropdown prof-img" >
+              {authReducer?.userData?.firstName?.substring(0, 1)}
+            </p>
+          </div>
                 {/* <div
                   onClick={() => imageRef.current.click()}
                   className="choose-image-div"
@@ -444,9 +455,9 @@ function ProfilePage({
                     </div>
                     <div className="col-lg-8">
                       <div className="feature">
-                        {authReducer.userData.package.product.name === "CS+" ||
-                        authReducer.userData.package.product.name ==
-                          "CS Pro" ? (
+                        {(authReducer?.userData?.package?.product?.name === "CS+" ||
+                        authReducer?.userData?.package?.product?.name ==
+                          "CS Pro") ? (
                           <>
                             <div className="check-lable">
                               <input
@@ -512,9 +523,9 @@ function ProfilePage({
 
                     <div className="col-lg-8">
                       <div className="feature">
-                        {authReducer.userData.package.product.name === "CS+" ||
-                        authReducer.userData.package.product.name ==
-                          "CS Pro" ? (
+                        {(authReducer.userData?.package?.product?.name === "CS+" ||
+                        authReducer.userData?.package?.product?.name ==
+                          "CS Pro" )? (
                           <>
                             <div className="check-lable">
                               <input
@@ -579,9 +590,9 @@ function ProfilePage({
 
                     <div className="col-lg-8">
                       <div className="feature">
-                        {authReducer.userData.package.product.name === "CS+" ||
-                        authReducer.userData.package.product.name ==
-                          "CS Pro" ? (
+                        {(authReducer.userData?.package?.product?.name === "CS+" ||
+                        authReducer.userData?.package?.product?.name ==
+                          "CS Pro" ) ? (
                           <>
                             <div className="check-lable">
                               <input

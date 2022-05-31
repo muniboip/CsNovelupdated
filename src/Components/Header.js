@@ -59,7 +59,7 @@ function Header({ authReducer }) {
                   />
                 </svg>
 
-                <p
+                <h5
                   className="cat-label-text"
                   type="button"
                   id="dropdownMenuButton"
@@ -69,7 +69,7 @@ function Header({ authReducer }) {
                 >
                   {" "}
                   Categories{" "}
-                </p>
+                </h5>
                 <FontAwesomeIcon className="mb-1" icon={faSortDown} />
                 <div
                   className="category dropdown-menu"
@@ -130,7 +130,38 @@ function Header({ authReducer }) {
                 >
                   community
                 </a>
+                <div
+            className="user-acc-circle-dropdown"
+            onClick={() => setShowDropdown(true)}
 
+          >
+            <p className="user-acc-label-dropdown">
+              {authReducer?.userData?.firstName?.substring(0, 1)}
+            </p>
+          </div>
+                {/* {authReducer?.userData?.profilePic ? (
+          <img
+            style={{
+              width: "60px",
+              height: "60px",
+              borderRadius: 50,
+            }}
+            alt="user-dp"
+            onClick={() => closeDropDown(false)}
+            src={`${authReducer?.userData?.profilePic.url ? authReducer?.userData?.profilePic.url : profile}`}
+
+
+          />
+        ) : (
+          <div
+            className="user-acc-circle-dropdown"
+            onClick={() => closeDropDown(false)}
+          >
+            <p className="user-acc-label-dropdown">
+              {authReducer?.userData?.firstName?.substring(0, 1)}
+            </p>
+          </div>
+        )}
                 <img
                   style={{
                     width: "45px",
@@ -139,8 +170,8 @@ function Header({ authReducer }) {
                   }}
                   alt="user-dp"
                   onClick={() => setShowDropdown(true)}
-                  src={`${authReducer?.userData?.profile_img ? authReducer?.userData?.profile_img.url : profile}`}
-                />
+                  src={`${authReducer?.userData?.profilePic.url ? authReducer?.userData?.profilePic.url : profile}`}
+                /> */}
                 {/* {authReducer?.userData?.profile_img!=null ? (
                 ) : (
                   <div

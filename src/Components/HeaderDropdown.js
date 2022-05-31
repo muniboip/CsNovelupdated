@@ -13,7 +13,7 @@ function HeaderDropdown({ closeDropDown, logout, authReducer }) {
     {
       id: 1,
       name: "my profile",
-      link: "profile#1",
+      link: "profile/#1",
     },
     {
       id: 2,
@@ -23,12 +23,12 @@ function HeaderDropdown({ closeDropDown, logout, authReducer }) {
     {
       id: 3,
       name: "favorites",
-      link: "profile#2",
+      link: "profile/#2",
     },
     {
       id: 4,
       name: "bookmarks",
-      link: "profile#3",
+      link: "profile/#3",
     },
     {
       id: 5,

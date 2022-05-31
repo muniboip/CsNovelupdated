@@ -4,10 +4,11 @@ import StarRatings from "react-star-ratings";
 import moment from "moment";
 import Footer from "../Components/Footer";
 import { connect } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate,useHistory } from "react-router-dom";
 import ReviewsMapper from "../Components/ReviewsMapper";
 import * as actions from "../store/actions/actions";
 import { toast } from "react-toastify";
+
 
 function Books({
   authReducer,
@@ -23,6 +24,7 @@ function Books({
   const [data, setdata] = useState(location?.state?.book);
   const accessToken = authReducer?.accessToken;
   const bookId = location.state.book?._id;
+  
   const [review, setReview] = useState("");
   const isLogin = authReducer?.isLogin;
   const [rating, setRating] = useState(0);
@@ -45,6 +47,8 @@ function Books({
 
   
 },[booksReducer.chaptersTitles])
+
+
 
 const _onPressCommentSend = () => {
     const data = {
@@ -210,14 +214,21 @@ const _onPressCommentSend = () => {
                   <span
                     className="heart"
                     onClick={() => {
+                      console.log('====================================');
+                      console.log();
+                      console.log('====================================');
+                      if(!authReducer.isLogin){
+                        toast.info("Login Required!")
+                      }else{
                       favoriteBookHandler(book._id);
                       setdata((prevState) => ({
                         ...prevState,
                         isLike: !prevState.isLike,
-                      }));
+                      }));}
                     }}
                   >
                     {data.isLike ? (
+                      
                       <i class="fa-solid fa-heart"></i>
                     ) : (
                       <i class="far fa-heart"></i>
@@ -305,7 +316,7 @@ const _onPressCommentSend = () => {
                         } else if (parseInt(review?.length) === 0) {
                           return;
                         } else {
-                          // _onPressCommentSend();
+                          _onPressCommentSend();
                         }
                       }}
                     >

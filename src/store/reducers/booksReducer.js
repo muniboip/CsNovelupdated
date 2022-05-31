@@ -10,6 +10,7 @@ import {
   GET_BOOKMARKS,
   GET_BOOK,
   GET_RECENT_CHAPTERS,
+  LOGOUT_REQUEST,
 } from "../actions/actionType";
 
 const initialState = {
@@ -141,7 +142,7 @@ export function booksReducer(state = initialState, action) {
         ...state,
         bookmarks: action.payload,
       };
-
+     
     case GET_SEARCHED_BOOKS:
       return {
         ...state,
