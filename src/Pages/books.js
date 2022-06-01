@@ -92,7 +92,7 @@ const _onPressCommentSend = () => {
 
     favoriteThisBook(data, accessToken, "favoritedBooks");
   };
-
+console.log(book);
   return (
     <>
       <Header />
@@ -198,7 +198,7 @@ const _onPressCommentSend = () => {
                         navigate(
                           `/ReadBookPage/${book?._id}/${booksReducer.chaptersTitles[0]._id}`,
                           {
-                            replace: true,
+                            replace: false,
                             state: {
                               bookName: book?.Title,
                               bookImage: `${book?.Cover?.url}`,
@@ -227,9 +227,9 @@ const _onPressCommentSend = () => {
                       }));}
                     }}
                   >
-                    {data.isLike ? (
+                    {book.isLike ? (
                       
-                      <i class="fa-solid fa-heart"></i>
+                      <i class="fa-solid fa-heart" style={{color:"red"}}></i>
                     ) : (
                       <i class="far fa-heart"></i>
                     )}

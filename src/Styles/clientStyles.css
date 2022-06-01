@@ -93,8 +93,8 @@ img.mp-book-cover:hover {
   margin-top: 3px;
 }
 p.mp-book-title:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  text-decoration: none;
+  cursor: default;
 }
 /******** MP CATEGORY ********/
 .mp-book-category {

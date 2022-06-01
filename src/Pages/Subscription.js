@@ -77,7 +77,7 @@ function Subscription({ authReducer }) {
       setpackages(val);
     }
   };
-
+console.log(packages);
   useEffect(() => {
     if (!authReducer.isLogin) {
       navigate("/");

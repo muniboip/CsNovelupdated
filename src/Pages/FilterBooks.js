@@ -26,6 +26,11 @@ function FilterBooks({
   const [contentStatus, setContentStatus] = useState(
     location?.state?.contentStatus || "all"
   );
+  useEffect(()=>{
+    setGenre(location.state.genre)
+  },[
+    location?.state?.genre,
+  ])
   const [sortBy, setSortBy] = useState(location?.state?.sortBy || "popular");
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -637,7 +642,7 @@ function FilterBooks({
                                 onClick={() => {
                                   getBook(item);
                                   navigate(`/book`, {
-                                    replace: true,
+                                    replace: false,
                                     state: {
                                       bookId: item?._id,
                                       bookName: item?.Title,

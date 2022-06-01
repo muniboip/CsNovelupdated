@@ -29,7 +29,7 @@ function MostWantedNovelsMapper({
         onClick={() => {
           getBook(item);
           navigate(`/book`, {
-            replace: true,
+            replace: false,
             state: {
               book:item,
               bookId: item?._id,

@@ -14,7 +14,7 @@ function Top10Mapper({  item, index,  getBook }) {
       onClick={() => {
         getBook(item);
         navigate(`/book`, {
-          replace: true,
+          replace: false,
           state: {
             book: item,
             bookId: item?._id,

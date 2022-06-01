@@ -65,7 +65,7 @@ const BookSearch = ({ getSearchedBooks, authReducer, booksReducer }) => {
                 key={index}
                 onClick={() => {
                   navigate(`/book`, {
-                    replace: true,
+                    replace: false,
                     state: {
                       book: item,
                       bookId: item?._id,

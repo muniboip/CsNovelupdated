@@ -129,7 +129,7 @@ function ReadBookPage({
       navigate(
         `/ReadBookPage/${bookId}/${booksReducer?.chaptersTitles[key + 1]._id}`,
         {
-          replace: true,
+          replace: false,
           state: {
             bookId: bookId,
             bookName: BOOK_NAME,
@@ -157,7 +157,7 @@ function ReadBookPage({
             booksReducer?.chaptersTitles[key - 1]._id
           }`,
           {
-            replace: true,
+            replace: false,
             state: {
               bookId: bookId,
               bookName: BOOK_NAME,
@@ -625,7 +625,7 @@ function ReadBookPage({
                               )
                             ) {
                               navigate(`/ReadBookPage/${bookId}/${ele?._id}`, {
-                                replace: true,
+                                replace: false,
                                 state: {
                                   bookId: bookId,
                                   bookName: BOOK_NAME,
@@ -638,7 +638,7 @@ function ReadBookPage({
                             }
                           } else {
                             navigate(`/ReadBookPage/${bookId}/${ele?._id}`, {
-                              replace: true,
+                              replace: false,
                               state: {
                                 bookId: bookId,
                                 bookName: BOOK_NAME,

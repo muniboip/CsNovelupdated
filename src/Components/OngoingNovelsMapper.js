@@ -49,7 +49,7 @@ function OngoingNovelsMapper({
           onClick={() => {
             getBook(item);
             navigate(`/ReadBookPage/${item?.book?._id}/${item.chapter._id}`, {
-              replace: true,
+              replace: false,
               state: {
                 bookId: item?.book?._id,
                 bookName: item?.book?.Title,
@@ -93,11 +93,13 @@ function OngoingNovelsMapper({
   } else {
     return (
       <div
-        className="col-lg-2 col-md-3 col-sm-4 og-books"
-        onClick={() => {
+        className="col-lg-2 col-md-3 col-sm-4"
+       
+      >
+        <div className="og-image-and-text-container og-books"  onClick={() => {
           getBook(item);
           navigate(`/book`, {
-            replace: true,
+            replace: false,
             state: {
               book: item,
               bookId: item?._id,
@@ -105,9 +107,7 @@ function OngoingNovelsMapper({
               bookImage: `${item?.book?.Cover.url}`,
             },
           });
-        }}
-      >
-        <div className="og-image-and-text-container">
+        }}>
           <img src={` ${item?.Cover?.url}`} className="og-book-image" alt="og-image"/>
           {/* <p className="mp-cs-text">CS</p> */}
           {/* <p className="og-book-status">{item.status} </p> */}

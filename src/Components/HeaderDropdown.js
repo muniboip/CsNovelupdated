@@ -83,7 +83,7 @@ function HeaderDropdown({ closeDropDown, logout, authReducer }) {
                 numberOfStars={1}
                 name="rating"
               />
-              <p className="user-acc-type-dropdown">CS PRO</p>
+              <p className="user-acc-type-dropdown">{authReducer.userData?.package?.product?.name}</p>
             </div>
           )}
         </div>

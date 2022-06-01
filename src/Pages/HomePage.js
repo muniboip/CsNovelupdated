@@ -502,7 +502,7 @@ useEffect(()=>{},[mostPopular,ongoing,completed,recent,top10])
                           navigate(
                             `/ReadBookPage/${item.book?._id}/${item._id}`,
                             {
-                              replace: true,
+                              replace: false,
                               state: {
                                 bookName: item.book?.Title,
                                 bookImage: `${item.book?.Cover?.url}`,

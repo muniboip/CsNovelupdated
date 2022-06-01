@@ -17,7 +17,7 @@ function FooterLinksMapper({ item, mode,key  }) {
           navigate("/search", { state: { genre: item?.label || item?.Title } });
         } else if (mode === "sortBy") {
           navigate(`/book`, {
-            replace: true,
+            replace: false,
             state: {
               book: item,
             },
