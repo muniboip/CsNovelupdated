@@ -32,6 +32,7 @@ import { UserAgreement } from "./Pages/UserAgreement";
 import { PrivacyPolicy } from "./Pages/PrivacyPolicy";
 import AddComponent from "./Components/Advertisement";
 
+
 function App() {
   return (
     <Provider store={store}>
